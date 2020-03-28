@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "848350",
+    "ThreadId": "359423",
+    "Html": "\r\n<p>Given that I am in Norway, our way of writing decimals is 12,21. Excel's internal representation of a date, assumes the 12.12 (. instead of ,).</p>\r\n<p>&nbsp;</p>\r\n<p>So this method (last method in WorksheetWriter.cs):</p>\r\n<pre>  <span style=\"color:blue\">public</span> <span style=\"color:blue\">static</span> <span style=\"color:blue\">string</span> GetNumericDate(DateTime date)\r\n        {\r\n            TimeSpan result = date - <span style=\"color:blue\">new</span> DateTime(1900, 1, 1);\r\n            <span style=\"color:blue\">int</span> days = result.Days &#43; 2; <span style=\"color:green\">//Time difference &#43; 2 </span>\r\n\r\n            <span style=\"color:blue\">double</span> totalSeconds = 24.0F * 3600.0F;\r\n            <span style=\"color:blue\">double</span> fraction = ((date.Hour * 3600) &#43; (date.Minute * 60) &#43; date.Second) / totalSeconds; <span style=\"color:green\">// Convert to a fraction of seconds in a day</span>\r\n\r\n            <span style=\"color:blue\">return</span> (Convert.ToSingle(days) &#43; fraction).ToString();\r\n        }<br>gives 12,21 when run on a norwegian system, which then corrupts the Excel file.<br><br>A change of the last line to:<br>return (Convert.ToSingle(days) &#43; fraction).ToString(System.Globalization.CultureInfo.InvariantCulture);<br>will give the correct representation in all cultures.<br><br>Nice project!</pre>\r\n",
+    "PostedDate": "2012-06-13T03:39:19.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

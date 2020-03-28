@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n \nI'm using the simple ooxml library and find it very usefull on terms of speed and ease but I have a problem.\nI'm using office 2010 and try to generate an excel sheet through a website with this library. \nBut I want to change the font on a cell to \"Arial\" and this fails it always remains Calibri. All the other properties like size, bold, etc. work fine \nThis is the code I'm using in VB :\n \n            Dim st As SpreadsheetStyle = SpreadsheetReader.GetDefaultStyle(spreadSheet)\n            style.IsBold = True\n            Dim ff As New Spreadsheet.Font\n            Dim fName As New FontName\n            Dim fFam As New FontFamily\n            Dim fSchem As New FontScheme\n            Dim fSize As New FontSize\n \n            fName.Val = \"Arial\"\n            fFam.Val = 2\n            fSchem.Val = FontSchemeValues.Minor\n            fSize.Val = 18\n \n            ff.AppendChild(Of FontName)(fName)\n            ff.AppendChild(Of FontFamily)(fFam)\n            ff.AppendChild(Of FontScheme)(fSchem)\n            ff.AppendChild(Of FontSize)(fSize)\n            st.AddFont(ff)\n            st.SetHorizontalAlignment(HorizontalAlignmentValues.Center)\n \n            'writer.SetStyle(st, \"A1\")\n            writer.PasteText(\"A1\", \"List products\", st)\n \nWhat am I doing wrong ? I've looked at the tutorial.\n \nThank you",
+    "LastUpdatedDate": "2013-02-21T16:11:40.053-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "simpleOOXML",
+    "ReportedDate": "2011-01-18T02:19:14.34-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "modifying font on a cell",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 6108
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "-------------------------\r\nI found the solution. The blank.xlsx that embedded in the .dll gives problems.\r\nWhen I make a new xlsx and load this to start from, everything works fine.\r\n\r\nI first added blk.xlsx to resources through add file.\r\n\r\nAnd then to start I add a little function below.\r\n\r\nPublic Function getStream() As MemoryStream\r\n    Dim memStream As New MemoryStream(My.Resources.blk.Length)\r\n    memStream.Write(My.Resources.blk, 0, My.Resources.blk.Length)\r\n    Return memStream\r\nEnd Function\r\n\r\nThis little function is then used for the using\r\n\r\nDim stream As MemoryStream = getStream()\r\nUsing spreadSheet As SpreadsheetDocument = SpreadsheetDocument.Open(stream, True)\r\n....\r\nEnd Using\r\n",
+      "PostedDate": "2011-01-18T13:36:38.82-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:11:40.053-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

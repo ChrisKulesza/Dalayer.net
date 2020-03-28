@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1443735",
+    "ThreadId": "644761",
+    "Html": "I have written the below code to delete a row from an excel spreadsheet using OOXML . I can able to remove the row data , however the row still existing as a blank row. Please help me to completely remove the row from the excel file.\r<br />\n<br />\npublic static void DeleteRowFromExcel(string docName, string sheetName, uint rowIndex)<br />\n<pre><code>    {\n        // Open the document for editing.\n        using (SpreadsheetDocument document = SpreadsheetDocument.Open(docName, true))\n        {\n            IEnumerable&lt;Sheet&gt; sheets = document.WorkbookPart.Workbook.GetFirstChild&lt;Sheets&gt;().Elements&lt;Sheet&gt;().Where(s =&gt; s.Name == sheetName);\n            if (sheets.Count() == 0)\n            {\n                // The specified worksheet does not exist.\n                return;\n            }\n            string relationshipId = sheets.First().Id.Value;\n            WorksheetPart worksheetPart = (WorksheetPart)document.WorkbookPart.GetPartById(relationshipId);\n            Row row=GetRow(worksheetPart,rowIndex);\n            row.RemoveAllChildren();\n            worksheetPart.Worksheet.Save();                \n        }\n\n    }</code></pre>\n\n",
+    "PostedDate": "2015-09-09T05:32:26.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

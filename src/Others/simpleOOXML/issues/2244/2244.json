@@ -1,0 +1,76 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2009-10-06T13:45:47.447-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "For personnal I add delete rows functions.\n \nI join subversion patch.",
+    "LastUpdatedDate": "2013-05-16T03:43:43.78-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "simpleOOXML",
+    "ReportedDate": "2009-07-20T07:50:10.11-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Adding DeleteRows functions",
+    "Type": {
+      "Name": "Feature",
+      "Id": 1
+    },
+    "VoteCount": 1,
+    "Id": 2244
+  },
+  "FileAttachments": [
+    {
+      "FileId": 741,
+      "FileName": "DeleteRows.patch",
+      "DownloadUrl": ".\\741"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Many thanks, I will look into adding this for the next release/",
+      "PostedDate": "2009-08-13T08:15:34.64-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "This patch has been applied and unit tests created. Thank you.",
+      "PostedDate": "2009-10-05T01:28:26.053-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-10-05T01:28:57.773-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-10-06T13:45:47.447-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:11:41.82-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T03:43:43.78-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

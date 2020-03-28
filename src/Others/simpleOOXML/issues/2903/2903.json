@@ -1,0 +1,80 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have a dataset returning from a SQL database which contains a bit field.  When this data table is pasted into an empty spreadsheet I get and error when opeing the file in Excel.  The data appears correct when Excel fixes the problem.  I have removed the fields returned one by one and have confirme that the bit field is the problem.\n \nBTW - Good work and thanks.",
+    "LastUpdatedDate": "2013-06-14T00:25:25.88-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Medium",
+      "Severity": 100,
+      "Id": 2
+    },
+    "ProjectName": "simpleOOXML",
+    "ReportedDate": "2009-10-06T01:55:28.843-07:00",
+    "Status": {
+      "Name": "Resolved",
+      "Id": 7
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Corrupt Spreadsheet with PasteDataTable with bit Fields",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 2903
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I can confirm the behaviour described above by beaunidle. Trying to achieve the same goal, I also noticed that trying to write boolean values from an SQL Server database into an Excel 2007 sheet (by inserting a DataTable object, using the InsertDataTable method) results in a corrupted xlsx file. Excel is able to fix the problem on opening the file, but I feel this is not a behaviour to be desired. The DataTable is filled by a SQL statement, no LINQ to SQL.\r\n\r\nSimple OOXML is a good library to work with; much more intuitive than the OXML SDK. Good job!",
+      "PostedDate": "2009-11-02T23:39:08.467-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Bug confirmed. Unit test added _WorksheetDataTablePasteTest_.",
+      "PostedDate": "2010-01-26T12:50:51.61-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-01-26T12:51:24.58-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Fixed. Thank you for the feedback.",
+      "PostedDate": "2010-01-26T13:48:18.36-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:11:41-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T03:43:42.977-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T03:43:43.087-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-06-14T00:25:25.88-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

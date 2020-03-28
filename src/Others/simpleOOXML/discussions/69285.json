@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "235714",
+    "ThreadId": "69285",
+    "Html": "<p>Will this package create files that can be used with Excel Services on Moss 2007. Currently we are using the ExcelPackage that creates an XLSX file, but it wil not load with excel sevices on our SharePoint server/ Have tried to load a spreadsheet into Excel services?</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2009-09-17T11:29:31.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "235942",
+    "ThreadId": "69285",
+    "Html": "<p>I havent got access to a MOSS server at the moment, but reading the documentation this should be possible. You could start with a fiel that works with MOSS as a template and then make changes, instead of starting from scratch.</p>\r\n<p>Please let us know the outcome.</p>",
+    "PostedDate": "2009-09-18T01:49:33.167-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "235970",
+    "ThreadId": "69285",
+    "Html": "<p>This should be possible since this library is using the SDK to create the files. I will test it on Monday and give feedback on here.</p>",
+    "PostedDate": "2009-09-18T03:40:42.077-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236018",
+    "ThreadId": "69285",
+    "Html": "<div>\r\nAs I understand this code, I am using this code to convert csv and tab delimited files into xslx files that would work in excel services.<br><br>Would I still use a template as a starting place in the above scenario?<br><br>Thanks for your help.</div>\r\n<br><div><hr size=2 width=\"100%\" align=center>\r\n\r\n<b>From</b>: jameswestgate &lt;notifications@codeplex.com&gt;\r<br><b>To</b>: Kevin Ogborne\r<br><b>Sent</b>: Fri Sep 18 06:03:01 2009<br><b>Subject</b>: Re: MOSS 2007 Excel Services [simpleOOXML:69285]\r<br><br></div>\r\n <p>From: jameswestgate</p> <div id=ThreadNotificationPostBody><p>I havent got access to a MOSS server at the moment, but reading the documentation this should be possible. You could start with a fiel that works with MOSS as a template and then make changes, instead of starting from scratch.</p>\r\n<p>Please let us know the outcome.</p></div>  \r\n<br>\r\n______________________________________________________________________<br>\r\nThis e-mail has been scanned by MCI Managed Email Content Service, using Skeptic(tm) technology powered by MessageLabs. For more information on MCI's Managed Email Content Service, visit http://www.mci.com.<br>\r\n______________________________________________________________________<br>\r\n<div><p>\r\nThis message (including any attachments) contains confidential<br> \r\nand/or proprietary information intended only for the addressee.<br> \r\nAny unauthorized disclosure, copying, distribution or reliance on<br> \r\nthe contents of this information is strictly prohibited and may<br> \r\nconstitute a violation of law. If you are not the intended<br> \r\nrecipient, please notify the sender immediately by responding to<br> \r\nthis e-mail, and delete the message from your system. If you<br> \r\nhave any questions about this e-mail please notify the sender<br> \r\nimmediately. \r\n</p></div>\r\n\r\n<br>\r\n______________________________________________________________________<br>\r\nThis e-mail has been scanned by MCI Managed Email Content Service, using Skeptic(tm) technology powered by MessageLabs. For more information on MCI's Managed Email  Content Service, visit http://www.mci.com.<br>\r\n______________________________________________________________________<br>\r\n",
+    "PostedDate": "2009-09-18T06:18:59.57-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236021",
+    "ThreadId": "69285",
+    "Html": "<div>\r\nThank you.</div>\r\n<br><div><hr size=2 width=\"100%\" align=center>\r\n\r\n<b>From</b>: mieliespoor &lt;notifications@codeplex.com&gt;\r<br><b>To</b>: Kevin Ogborne\r<br><b>Sent</b>: Fri Sep 18 06:40:49 2009<br><b>Subject</b>: Re: MOSS 2007 Excel Services [simpleOOXML:69285]\r<br><br></div>\r\n <p>From: mieliespoor</p> <div id=ThreadNotificationPostBody><p>This should be possible since this library is using the SDK to create the files. I will test it on Monday and give feedback on here.</p></div>  \r\n<br>\r\n______________________________________________________________________<br>\r\nThis e-mail has been scanned by MCI Managed Email Content Service, using Skeptic(tm) technology powered by MessageLabs. For more information on MCI's Managed Email Content Service, visit http://www.mci.com.<br>\r\n______________________________________________________________________<br>\r\n<div><p>\r\nThis message (including any attachments) contains confidential<br> \r\nand/or proprietary information intended only for the addressee.<br> \r\nAny unauthorized disclosure, copying, distribution or reliance on<br> \r\nthe contents of this information is strictly prohibited and may<br> \r\nconstitute a violation of law. If you are not the intended<br> \r\nrecipient, please notify the sender immediately by responding to<br> \r\nthis e-mail, and delete the message from your system. If you<br> \r\nhave any questions about this e-mail please notify the sender<br> \r\nimmediately. \r\n</p></div>\r\n\r\n<br>\r\n______________________________________________________________________<br>\r\nThis e-mail has been scanned by MCI Managed Email Content Service, using Skeptic(tm) technology powered by MessageLabs. For more information on MCI's Managed Email  Content Service, visit http://www.mci.com.<br>\r\n______________________________________________________________________<br>\r\n",
+    "PostedDate": "2009-09-18T06:19:29.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "238936",
+    "ThreadId": "69285",
+    "Html": "<p>Any Chance to have run a file thorugh and see if it works with Excel Services?</p>\r\n<p>Thanks in advance!</p>\r\n<p>Kmogborne</p>",
+    "PostedDate": "2009-09-25T12:43:04.193-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

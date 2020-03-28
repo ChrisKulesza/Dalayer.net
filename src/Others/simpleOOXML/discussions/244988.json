@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "561971",
+    "ThreadId": "244988",
+    "Html": "\r\n<pre>   /// &lt;summary&gt;\r\n   /// Renaming a worksheet in the document\r\n   /// &lt;/summary&gt;\r\n   /// &lt;remarks&gt;\r\n   /// Using one instance variable named doc\r\n   /// &lt;/remarks&gt;\r\n   /// &lt;param name=&quot;oldName&quot;&gt;The (current) name of the sheet to rename&lt;/param&gt;\r\n   /// &lt;param name=&quot;newName&quot;&gt;The new sheet name&lt;/param&gt;\r\n   private void RenameSheet(string oldName, string newName)\r\n   {\r\n      Sheet sheet = doc.WorkbookPart.Workbook.Descendants().First(s =&gt; s.Name == oldName);\r\n      if (sheet != null)\r\n            sheet.Name = newName;\r\n   }\r\n</pre>\r\n",
+    "PostedDate": "2011-02-07T07:36:24.717-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi. I was wondering (and I cannot see anything obvious in the XML), but does OOXML allow for easier read/write of Word 2007 documents with mailmerge fields? If so, do you have an example please? Thank you",
+    "LastUpdatedDate": "2014-03-23T21:18:09.22-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "simpleOOXML",
+    "ReportedDate": "2014-03-23T21:18:09.22-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Does OOXML allow Word mergefields?",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 9268
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

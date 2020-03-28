@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "418602",
+    "ThreadId": "205080",
+    "Html": "<p>The current Simple OOXML 2.1.3678 version supports the Open XML SDK 2.0 December 2009 CTP.</p>\r\n<p>Since 12 March 2010 the Open XML SDK 2.0 March 2010 release is available. When will Simple OOXML get support for this latest release?</p>",
+    "PostedDate": "2010-03-16T02:31:29.347-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "419083",
+    "ThreadId": "205080",
+    "Html": "<p>An update will be posted in the next few days. In the meantime you should download the source code and recompile the library - changes are usually minor.</p>",
+    "PostedDate": "2010-03-17T01:51:20.01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "461362",
+    "ThreadId": "205080",
+    "Html": "Just downloading and recompiling works fine, but a proper release should make it easier for people to use this library.\r\n\r\nIs a new release coming soon?",
+    "PostedDate": "2010-06-29T14:35:13.837-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "465095",
+    "ThreadId": "205080",
+    "Html": "New release will be posted soon.",
+    "PostedDate": "2010-07-08T14:39:02.4-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "465932",
+    "ThreadId": "205080",
+    "Html": "<p>The latest release of Simple OOXML &nbsp;now works with the March 2010 SDK.</p>",
+    "PostedDate": "2010-07-11T01:47:07.81-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

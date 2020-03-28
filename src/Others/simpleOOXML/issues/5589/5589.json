@@ -1,0 +1,66 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "A huge improvement that I am in desparate need of is having the WorksheetWriter.cs.PasteDataTable method handle formulas in addition to the regular data types that it currently handles.  This should be done in the else branches near lines 735 and 748.  Basically, the datatable column value could be any string that starts with the equal sign \"=\".\n \nThis will be an extremely useful and valuable enhancement.  In my situation, the users want the formulas, rather than the computed value, because if the formulas are there, they can change some of the values to do a \"what if\" analysis.  I'm willing to do this change if you do not have time, but I downloaded the source code and couldn't get the solution to open.. I am using Visual Studio 2008.\n \nPlease let me know if I can be of assistance.",
+    "LastUpdatedDate": "2013-02-21T16:11:40.34-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "simpleOOXML",
+    "ReportedDate": "2010-09-14T17:09:39.46-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "WorksheetWriter.cs.PasteDataTable method should handle a formula",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 5589
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2028,
+      "FileName": "WorksheetWriter.cs",
+      "DownloadUrl": ".\\2028"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "I've uploaded a working copy of WorksheetWriter.cs that handles formulas.  Please let me know what you think and if you can get it tested and into a release.  Thanks!  Let me know if you have any questions.",
+      "PostedDate": "2010-09-14T19:21:14.447-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Awesome thanks, we'll look into testing and brining this into the next release. Did you create an associated unit test?",
+      "PostedDate": "2011-02-08T01:28:33.72-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "James, I have not done anything further on this.  However I have been using it in a heavily used application since September.   I am not familiar with connecting to and editing codeplex code, so I just uploaded the individual file.  If you have any trouble incorporating it into the solution, let me know and I'll see what I can do.  Thanks, Jeremy.",
+      "PostedDate": "2011-02-08T06:27:06.217-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:11:40.34-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

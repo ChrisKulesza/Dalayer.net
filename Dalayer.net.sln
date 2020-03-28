@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29920.165
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4098143C-CED2-439E-A9FB-0FC0CD8FC838}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		ACKNOWLEDGMENTS.md = ACKNOWLEDGMENTS.md
+		AUTHORS.md = AUTHORS.md
+		CHANGELOG.md = CHANGELOG.md
+		CODE_OF_CONDUCT.md = CODE_OF_CONDUCT.md
+		CONTRIBUTING.md = CONTRIBUTING.md
+		Dalayer.net.sln.licenseheader = Dalayer.net.sln.licenseheader
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+		RELEASE.md = RELEASE.md
+		ROADMAP.md = ROADMAP.md
+		SECURITY.md = SECURITY.md
+		TODO.md = TODO.md
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "docs", "docs\", "{05DA0710-ADD8-44E1-B2B4-E7024DFEEF03}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_35055"
+		Debug.AspNetCompiler.PhysicalPath = "docs\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_35055\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_35055"
+		Release.AspNetCompiler.PhysicalPath = "docs\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_35055\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "35055"
+		SlnRelativePath = "docs\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dalayer.net", "src\Dalayer.net\Dalayer.net.csproj", "{E09AF2FD-BCDD-4318-84FE-FA9B95874535}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05DA0710-ADD8-44E1-B2B4-E7024DFEEF03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05DA0710-ADD8-44E1-B2B4-E7024DFEEF03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05DA0710-ADD8-44E1-B2B4-E7024DFEEF03}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{05DA0710-ADD8-44E1-B2B4-E7024DFEEF03}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{E09AF2FD-BCDD-4318-84FE-FA9B95874535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E09AF2FD-BCDD-4318-84FE-FA9B95874535}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E09AF2FD-BCDD-4318-84FE-FA9B95874535}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E09AF2FD-BCDD-4318-84FE-FA9B95874535}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4DECB31D-A40F-4D92-AC37-ECCAC75FB7C3}
+	EndGlobalSection
+EndGlobal

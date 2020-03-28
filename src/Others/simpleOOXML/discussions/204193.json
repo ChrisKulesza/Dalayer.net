@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "415478",
+    "ThreadId": "204193",
+    "Html": "<p>Hi,</p>\r\n<p>thanks for this library, this is really useful.</p>\r\n<p>I have two questions:</p>\r\n<p>1) When I use writer.PasteNumber, I always get an error message from Excel that the file is corrupted and must be restored (if I trust the source). Anyway, after clicking yes, everything seems to be OK, but the numbers are text formatted, so I have to convert them to numbers before I can proceed with the sheet. Could you give a short example how to paste an integer, a decimal with a given number of decimals (like &quot;{0:n3}&quot;) and a currency (with the currency symbol)?</p>\r\n<p>2) How can I paste a formula? writer.PasteText(&quot;C1&quot;, &quot;=A1+B1&quot;) displays the formula in the cell, but does not calculate...</p>\r\n<p>Best wishes</p>\r\n<p>Michael</p>",
+    "PostedDate": "2010-03-08T07:33:03.79-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "415859",
+    "ThreadId": "204193",
+    "Html": "<p>\r\n<p>In the meantime I found out the following:</p>\r\n<p>1)</p>\r\n<p>PasteNumber(&quot;A1&quot;, String.Format(&quot;{0:c}&quot;, decimalValue));</p>\r\n<p>leads to an error when opening the xlsx file - and after letting Excel repair the issue, the number&nbsp;is formatted as a string.</p>\r\n<p>To paste a currency, the following is necessary:</p>\r\n</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>SpreadsheetStyle currencyStyle = SpreadsheetReader.GetDefaultStyle(doc);\r\n<span style=\"color:Blue\">string</span> cSymbol = CultureInfo.CurrentCulture.NumberFormat.CurrencySymbol;\r\ncurrencyStyle.AddFormat(<span style=\"color:Blue\">new</span> NumberingFormat()\r\n   { NumberFormatId = (UInt32Value)164U, FormatCode = <span style=\"color:#A31515\">&quot;\\&quot;&quot;</span> + cSymbol + <span style=\"color:#A31515\">&quot;\\&quot;\\\\ #,##0.00;[Red]\\&quot;&quot;</span> + cSymbol + <span style=\"color:#A31515\">&quot;\\&quot;\\\\ #,##0.00&quot;</span> });\r\nStringBuilder _ammount = <span style=\"color:Blue\">new</span> StringBuilder();\r\n_ammount.Append(Convert.ToString(decimalValue).Trim());\r\n_ammount.Replace(CultureInfo.CurrentCulture.NumberFormat.NumberGroupSeparator, <span style=\"color:#A31515\">&quot;&quot;</span>);\r\n_ammount.Replace(CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator, <span style=\"color:#A31515\">&quot;.&quot;</span>);\r\nwriter.PasteNumber(<span style=\"color:#A31515\">&quot;A1&quot;</span>, _ammount.ToString(), currencyStyle);</pre>\r\n</div>\r\n<p>\r\n<p>Especially the need of replacing the local group separators and decimal separator is annoying.</p>\r\n<p>2)</p>\r\n</p>\r\n<p>To add a function:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>Cell sumCell = writer.FindCell(<span style=\"color:#A31515\">&quot;H3&quot;</span>);\r\nsumCell.CellFormula = <span style=\"color:Blue\">new</span> CellFormula(<span style=\"color:#A31515\">&quot;=SUM(A3:G3)&quot;</span>);</pre>\r\n</div>\r\n<p>\r\n<p>That's pretty simple, and straightforward.</p>\r\n<p>Hope it helps anyone else, and maybe someone finds a better solution, esp. for 1)</p>\r\n<p>Best wishes<br>Michael</p>\r\n</p>",
+    "PostedDate": "2010-03-09T02:30:36.03-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "423631",
+    "ThreadId": "204193",
+    "Html": "do you know how to apply the cell formatting to the cell that you're applying a formula?  I'm calculating the sum for some currency values (using your example above) and i'm not sure how to apply the same currency formatting to this formula cell.\r\n",
+    "PostedDate": "2010-03-25T08:46:40.113-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "423639",
+    "ThreadId": "204193",
+    "Html": "<p>chart004,</p>\r\n<p>should work like this:</p>\r\n<pre>writer.SetStyle(&quot;H3&quot;, currencyStyle);</pre>\r\n<p>Best wishes<br>Michael</p>",
+    "PostedDate": "2010-03-25T08:54:13.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "509477",
+    "ThreadId": "204193",
+    "Html": "<p>That didn't really work for me; in Excel it showed Custom Format instead of Currency. Since I only care about US Currency this worked just fine for me:</p>\r\n<p>var n = new NumberingFormat();<br>n.NumberFormatId = 164;<br>n.FormatCode = &quot;\\&quot;$\\&quot;#,##0.00&quot;;</p>\r\n<p>var currencyStyle = SpreadsheetReader.GetDefaultStyle(doc);<br>currencyStyle.AddFormat(n);</p>\r\n<p>writer.PasteNumber(cellName, decimalValue.ToString(), currencyStyle);</p>",
+    "PostedDate": "2010-10-19T09:25:24.417-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1348436",
+    "ThreadId": "204193",
+    "Html": "Does anyone know the NumberFormatId for &quot;&quot;Number&quot;. Where can I get a list of Valid format id's?<br />\n",
+    "PostedDate": "2015-02-02T15:45:13.007-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1348473",
+    "ThreadId": "204193",
+    "Html": "There's a list here: <a href=\"http://closedxml.codeplex.com/wikipage?title=NumberFormatId%20Lookup%20Table\" rel=\"nofollow\">http://closedxml.codeplex.com/wikipage?title=NumberFormatId%20Lookup%20Table</a>\r<br />\n<br />\nNumberFormatID 1 is probably what you want.<br />\n",
+    "PostedDate": "2015-02-02T19:55:54.84-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1348602",
+    "ThreadId": "204193",
+    "Html": "Thanks That's exactly what I needed. This might be a stupid question but,  what are the fundamental differences differences between ooxml and closedxml?<br />\n",
+    "PostedDate": "2015-02-03T05:42:48.997-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1348610",
+    "ThreadId": "204193",
+    "Html": "Well, the &quot;fundamental&quot; difference seems to be the license. As we have a GNU Library General Public License (LGPL) here, ClosedXML is published under the MIT license (which is less strict when re-using the package in any way).\r<br />\n<br />\nBest wishes\r<br />\nMichael<br />\n",
+    "PostedDate": "2015-02-03T05:59:15.097-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1348612",
+    "ThreadId": "204193",
+    "Html": "Fixed.<br />\n",
+    "PostedDate": "2015-02-03T06:03:55.4-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1353098",
+    "ThreadId": "204193",
+    "Html": "James,\r<br />\n<br />\nthank you so much for changing the license - I think this is a really good step!\r<br />\n<br />\nBest wishes\r<br />\nMichael<br />\n",
+    "PostedDate": "2015-02-16T07:58:22.947-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

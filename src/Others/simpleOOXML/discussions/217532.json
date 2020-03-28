@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "460533",
+    "ThreadId": "217532",
+    "Html": "<p><span style=\"color:gray\">///</span> <span style=\"color:gray\">&lt;summary&gt;</span><br><span style=\"color:gray\">///</span><span style=\"color:green\"> Deletes a worksheet from the document</span><br><span style=\"color:gray\">///</span> <span style=\"color:gray\">&lt;/summary&gt;</span><br><span style=\"color:gray\">///</span> <span style=\"color:gray\">&lt;remarks&gt;</span><br><span style=\"color:gray\">///</span><span style=\"color:green\"> Uses one instance variable, named doc.</span><br><span style=\"color:gray\">///</span> <span style=\"color:gray\">&lt;/remarks&gt;</span><br><span style=\"color:gray\">///</span> <span style=\"color:gray\">&lt;param name=&quot;sheetName&quot;&gt;</span><span style=\"color:green\">The name of the sheet to remove.&lt;/param&gt;</span><br><span style=\"color:gray\">///</span> <span style=\"color:gray\">&lt;returns&gt;</span><span style=\"color:green\">If the worksheet existed before.&lt;/returns&gt;</span><br><span style=\"color:blue\">public</span> <span style=\"color:blue\">bool</span> RemoveWorksheet(<span style=\"color:blue\">string</span> sheetName)<br>{<br>&nbsp;&nbsp;&nbsp;<span style=\"color:#008080\"> IEnumerable</span>&lt;<span style=\"color:#008080\">Sheet</span>&gt; sheets = doc.WorkbookPart.Workbook.Descendants&lt;<span style=\"color:#008080\">Sheet</span>&gt;().Where(s =&gt; s.Name == sheetName);<br>&nbsp;&nbsp;&nbsp; <span style=\"color:blue\">if</span> (sheets.Count() == 0)<br>&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color:blue\">return</span> <span style=\"color:blue\">false</span>;<br>&nbsp;&nbsp;&nbsp; }<br><br>&nbsp;&nbsp;&nbsp; doc.WorkbookPart.DeletePart(sheets.First().Id);<br>&nbsp;&nbsp;&nbsp; doc.WorkbookPart.Workbook.Sheets.RemoveChild&lt;<span style=\"color:#008080\">Sheet</span>&gt;(sheets.First());<br>&nbsp;&nbsp;&nbsp; doc.WorkbookPart.Workbook.Save();<br>&nbsp;&nbsp;&nbsp; <span style=\"color:blue\">return</span> <span style=\"color:blue\">true</span>;<br>}</p>",
+    "PostedDate": "2010-06-28T00:35:35.143-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "465635",
+    "ThreadId": "217532",
+    "Html": "This has been tested and added to the SpreadsheetWriter class. Many thanks.",
+    "PostedDate": "2010-07-09T14:16:13.617-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "468105",
+    "ThreadId": "217532",
+    "Html": "Way to go!",
+    "PostedDate": "2010-07-16T00:35:19.873-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

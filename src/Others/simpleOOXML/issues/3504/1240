@@ -1,0 +1,13 @@
+Index: DocumentFormat.OpenXml.Extensions/WorksheetReader.cs
+===================================================================
+--- DocumentFormat.OpenXml.Extensions/WorksheetReader.cs	(révision 32574)
++++ DocumentFormat.OpenXml.Extensions/WorksheetReader.cs	(copie de travail)
+@@ -154,7 +154,7 @@
+                 foreach (var numberFormatElement in styles.Stylesheet.NumberFormats)
+                 {
+                     var formatLoop = (NumberFormat) numberFormatElement;
+-                    if (formatLoop.NumberFormatId == cellFormat.NumberFormatId)
++                    if ((uint)formatLoop.NumberFormatId == (uint)cellFormat.NumberFormatId)
+                     {
+                         numberFormat = formatLoop;
+                         break;

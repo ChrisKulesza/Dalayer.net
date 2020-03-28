@@ -1,0 +1,56 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n \nI'm using the WorksheetWriter.PasteDataTable method to write the content of DatTable to a newly created XLSX.\n(writer.PasteDataTable(ds.Tables[tableIndex], \"A2\", style);)\n \nHowever when trying to open the generated file I get an error telling me it's corrupt (see attachment). This does not happen all the time.\nI tried to find a patter on the causes of the error and could deduct that certain dates in the file were not being parsed to the excel correctly (see attachment).\nWhen debugging and checking the dataset they could be viewed correctly using the DataViewer (see attachment). This dataset is also being consumed by a DevExpress report and no issues occur.\n \nKind Regards,\nBen",
+    "LastUpdatedDate": "2013-02-21T16:11:39.9-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "simpleOOXML",
+    "ReportedDate": "2011-02-08T08:58:54.793-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "WorksheetWriter.PasteDataTable - Corrupt excel (corrupt dateformat?)",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 6217
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2248,
+      "FileName": "excelerroropening.png",
+      "DownloadUrl": ".\\2248"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "For those who had the same issue I have made a temporary workaround.\r\n\r\nThe export to excel functionality was implemented to make data available to the end user. So what I did was create a new column containing the \"ToString()\" value of the DateTime type column. Then afterwards I dropped the DateTime column resulting in a non corrupt file.\r\n\r\nBen",
+      "PostedDate": "2011-02-14T02:22:20.57-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:11:39.9-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

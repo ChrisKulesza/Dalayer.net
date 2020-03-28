@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "555168",
+    "ThreadId": "243249",
+    "Html": "\r\n<p>Anyone know how to write a hyperlink into an Excel cell? The text displayed will be different from the hyperlink itself. For instance, display\r\n<span style=\"text-decoration:underline; color:#0000ff\">My Link</span> pointed to a URL.</p>\r\n",
+    "PostedDate": "2011-01-25T11:10:45.953-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

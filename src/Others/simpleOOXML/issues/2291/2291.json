@@ -1,0 +1,66 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2009-10-06T13:46:28.543-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi developers, nice job!\nI notice a strange problem during tests. For my purposes, I modified WorksheetDataTablePasteColumnsTest() so that it uses template.xlsx instead of creating a new Spreadsheet. The template.xlsx contains, as you know, A3:A5 cells filled with strings. I added some merged cells, but this should not be significant for this case. When I run the test, the resulting spreadsheet is unreadable (both under Office 2007 and Office 2003 with Extensions with error \"The converter failed to open the file\"). Analising the inner sheets, I noticed that the cells into rows 3,4 and 5 are not correctly sorted:\n<x:row r=\"3\" spans=\"1:13\">\n      <x:c r=\"B3\" t=\"str\">\n        <x:v>Parts</x:v>\n      </x:c>\n      <x:c r=\"A3\" s=\"1\" t=\"s\">\n        <x:v>0</x:v>\n      </x:c>\n      <x:c r=\"H3\" s=\"3\"/>\n      <x:c r=\"I3\" s=\"3\"/>\n      <x:c r=\"J3\" s=\"3\"/>\n      <x:c r=\"K3\" s=\"3\"/>\n    </x:row>\n    <x:row r=\"4\" spans=\"1:13\">\n      <x:c r=\"B4\" t=\"str\">\n        <x:v>Cheque</x:v>\n      </x:c>\n      <x:c r=\"A4\" s=\"1\" t=\"s\">\n        <x:v>1</x:v>\n      </x:c>\n      <x:c r=\"H4\" s=\"3\"/>\n      <x:c r=\"I4\" s=\"3\"/>\n      <x:c r=\"J4\" s=\"3\"/>\n      <x:c r=\"K4\" s=\"3\"/>\n    </x:row>\n    <x:row r=\"5\" spans=\"1:13\">\n      <x:c r=\"B5\" t=\"str\">\n        <x:v>Products</x:v>\n      </x:c>\n      <x:c r=\"A5\" s=\"1\" t=\"s\">\n        <x:v>2</x:v>\n      </x:c>\n      <x:c r=\"H5\" s=\"3\"/>\n      <x:c r=\"I5\" s=\"3\"/>\n      <x:c r=\"J5\" s=\"3\"/>\n      <x:c r=\"K5\" s=\"3\"/>\n    </x:row>\nAs you can see, the A(N) cells are located AFTER the B(N) cells and this cause the error. It is enough to switch A(N) and B(N) cells and the spreadsheet can be opened without problems. You can find attached the resulting sheet. It seems that passing from row N to row N+1, all the cells containing data or formatting (and not involved in the various PasteValue commands) are flushed without regard to the order they should have... The same behavior happens when dealing with merged cells, but I fixed it simply deleting all the merged cells but the first (I don't know if the problems are related, but I think it is probable...)\nI was thinking about to use some OrderBy commands on the row before passing to the next one, but I don't know how (or onto what element) to perform this job. Any idea?\nBest Regards\nZioZione",
+    "LastUpdatedDate": "2013-05-16T03:43:43.507-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "simpleOOXML",
+    "ReportedDate": "2009-07-23T08:59:34.69-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "WorksheetWritet.DataTablePaste: incorrect cells order when using List<string> columnNames parameter",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 2291
+  },
+  "FileAttachments": [
+    {
+      "FileId": 758,
+      "FileName": "datatablepartial.xlsx",
+      "DownloadUrl": ".\\758"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Fixed and uploaded to source. Will be in next build.",
+      "PostedDate": "2009-10-05T14:41:19.213-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-10-06T13:46:28.543-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:11:41.497-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T03:43:43.507-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "207473",
+    "ThreadId": "61183",
+    "Html": "<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Green\">// Cells must be in sequential order according to CellReference. Determine where to insert the new cell.</span>\r\nCell refCell = <span style=\"color:Blue\">null</span>;\r\n<span style=\"color:Blue\">foreach</span> (Cell cell <span style=\"color:Blue\">in</span> row.Elements&lt;Cell&gt;())\r\n{\r\n    <span style=\"color:Blue\">if</span> ((<span style=\"color:Blue\">string</span>.Compare(cell.CellReference.Value, cellReference, <span style=\"color:Blue\">true</span>) &gt; 0))\r\n    {\r\n        refCell = cell;\r\n        <span style=\"color:Blue\">break</span>;\r\n    }\r\n}\r\n</pre>\r\n</div>\r\n<p>When we determine where to insert the new cell,</p>\r\n<p>we are not allowed to use string.Compare() method.</p>\r\n<p><strong>When we use string.Compare(), we have &quot;Z&quot; &gt; &quot;AA&quot; !!!</strong></p>\r\n<p>To fix this bug, we must compare not column names, but column indexes.</p>\r\n<p>like this:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Green\">// Cells must be in sequential order according to CellReference. Determine where to insert the new cell.</span>\r\nCell refCell = <span style=\"color:Blue\">null</span>;\r\n<span style=\"color:Blue\">foreach</span> (Cell cell <span style=\"color:Blue\">in</span> row.Elements&lt;Cell&gt;())\r\n{\r\n    <span style=\"color:Blue\">string</span> colName = SpreadsheetReader.ColumnFromReference(cell.CellReference.Value);\r\n    <span style=\"color:Blue\">string</span> colName2 = SpreadsheetReader.ColumnFromReference(cellReference);\r\n\r\n    <span style=\"color:Blue\">if</span> (SpreadsheetReader.GetColumnIndex(colName) &gt; SpreadsheetReader.GetColumnIndex(colName2))\r\n    {\r\n        refCell = cell;\r\n        <span style=\"color:Blue\">break</span>;\r\n    }\r\n}\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-01T03:48:21.117-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211514",
+    "ThreadId": "61183",
+    "Html": "<p>Fixed in latest release.</p>",
+    "PostedDate": "2009-07-13T15:21:44.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

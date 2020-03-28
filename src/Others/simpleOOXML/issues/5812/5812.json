@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "hi\n \ni have datattable contain all fileds type (String,Boolean,Date,...) with a 10,000 record and i user PasteText method to insert my values into spreedsheet. it's work but when i want to insert more than 3000 record it take too long.\nhow can i paste my datatable in e fast & easy way into excel spreedsheet?\ni try to user PasteDataTable method , but it's remove my string column from export and because there is no document reference i can not debug the issue. \nplease help me out. i also want to export this datatable to word,CSV and pdf . if there is fast & easy way for those to export, please let me know.\nthanks alot",
+    "LastUpdatedDate": "2013-02-21T16:11:40.197-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "simpleOOXML",
+    "ReportedDate": "2010-11-10T05:51:33.297-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Writing DataTable into SpreedSheet",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 5812
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Shouldn't this be an issue within the project, and not an issue you are having yourself?",
+      "PostedDate": "2010-12-12T12:00:53.547-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-12-12T12:00:58.823-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:11:40.197-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

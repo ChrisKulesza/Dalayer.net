@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "818959",
+    "ThreadId": "350930",
+    "Html": "\r\n<p>I am setting the font style like this:</p>\r\n<p>WorksheetWriter writer = new WorksheetWriter(spreadSheet, worksheetPart);<br>\r\nSpreadsheetStyle style = SpreadsheetReader.GetDefaultStyle(spreadSheet);<br>\r\nstyle.IsBold = true;<br>\r\nwriter.InsertRow(firstRow.RowIndex);<br>\r\nwriter.PasteText(&quot;A1&quot;, &quot;mytext&quot;, style);</p>\r\n<p>After the file is saved and then opened using Excel, the following error is displayed:</p>\r\n<p>&quot;Excel found unreadable content...&quot;</p>\r\n<p>and after clicking yes to repair, the following is displayed:</p>\r\n<p>&quot;Repaired Records: Cell information from /xl/worksheets/sheet1.xml part&quot;</p>\r\n<p>The data is inserted properly but the font style is not bold.</p>\r\n<p>Any suggestions?</p>\r\n",
+    "PostedDate": "2012-04-02T14:34:36.103-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

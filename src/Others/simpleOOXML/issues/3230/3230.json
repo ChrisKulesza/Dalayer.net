@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The method ToXmlNumeric test for decimal returns a double instead of a decimal.\n \nIf you correct the method like this, it works:\n        public static string ToXmlNumeric(object value)\n        {\n            if (value.GetType() == typeof(short)) return XmlConvert.ToString((short) value);\n            if (value.GetType() == typeof(int)) return XmlConvert.ToString((int) value);\n            if (value.GetType() == typeof(long)) return XmlConvert.ToString((long) value);\n            if (value.GetType() == typeof(float)) return XmlConvert.ToString((float) value);\n            if (value.GetType() == typeof(double)) return XmlConvert.ToString((double) value);\n            if (value.GetType() == typeof(decimal)) return XmlConvert.ToString((decimal) value);\n            if (value.GetType() == typeof(ushort)) return XmlConvert.ToString((ushort) value);\n            if (value.GetType() == typeof(uint)) return XmlConvert.ToString((uint) value);\n            if (value.GetType() == typeof(ulong)) return XmlConvert.ToString((ulong) value);\n \n            return value.ToString();\n        }\n    }",
+    "LastUpdatedDate": "2013-06-14T00:25:25.72-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "simpleOOXML",
+    "ReportedDate": "2009-11-03T08:27:45.567-08:00",
+    "Status": {
+      "Name": "Resolved",
+      "Id": 7
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Spreadsheetwriter fails with decimal datatype",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 3230
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "This has been fixed. Thank you for the feedback.",
+      "PostedDate": "2010-01-26T13:46:57.17-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:11:40.83-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T03:43:42.737-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T03:43:42.847-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-06-14T00:25:25.72-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

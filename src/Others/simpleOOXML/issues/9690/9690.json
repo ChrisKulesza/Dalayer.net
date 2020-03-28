@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi\nexisting code uses OpenXML v2.5 but I get an error when using OpenXml.Extensions v2.0.50727.\nIs there a version of OpenXml.Extensions that will work with OpenXML v2.5?\nmany thanks\nStewart",
+    "LastUpdatedDate": "2016-06-29T02:58:40.647-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "simpleOOXML",
+    "ReportedDate": "2016-06-29T02:58:40.647-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "OpenXml.Extensions v2.0.50727 not working with OpenXML v2.5",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 9690
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

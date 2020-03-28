@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "sometimes, if i use\n  WorksheetWriter.PasteValues(doc, worksheetPart, \"A\", 2, values, CellValues.String, null); where values is a List<string>, \nopening the generated .xlsx results in an error message of Excel complaining about a corrupt file.\n \nthis does not happen all the time and is not easily to reproduce. mostly it happens when the row used as target already contains data in some columns. \n \nkind regards,\nTom",
+    "LastUpdatedDate": "2013-06-14T00:25:26.04-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "simpleOOXML",
+    "ReportedDate": "2009-06-09T04:25:25.777-07:00",
+    "Status": {
+      "Name": "Resolved",
+      "Id": 7
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "WorksheetWriter.PasteValues sometimes creates a corrupt .xlsx file if List<string> is used",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 1849
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi Tom,\r\n\r\nIf you could attach a small corrupted .xlsx file, I'll try work out the problem.",
+      "PostedDate": "2009-06-17T06:13:47.01-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Closing due to inactivity",
+      "PostedDate": "2010-01-26T13:55:00.587-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-01-26T13:55:21.07-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:11:43.087-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T03:43:44.697-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T03:43:44.823-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-06-14T00:25:26.04-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

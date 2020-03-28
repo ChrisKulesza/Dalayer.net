@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The same bug listed in WorkItem 4096 (http://simpleooxml.codeplex.com/workitem/4096) exists in the SetWorksheetDimension method.  When the number of cells in a row is zero, an exception is thrown.",
+    "LastUpdatedDate": "2013-02-21T16:11:39.587-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "simpleOOXML",
+    "ReportedDate": "2012-02-03T12:58:30.347-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Bug in SpreadsheetWriter.cs, method name: SetWorksheetDimension",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 7695
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

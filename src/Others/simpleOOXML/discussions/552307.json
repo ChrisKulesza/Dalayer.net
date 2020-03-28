@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1274743",
+    "ThreadId": "552307",
+    "Html": "I have downloaded the lastest version and the following libraries are missing, also missing from the example tutorials?\r<br />\n<br />\nusing DocumentFormat.OpenXml.Packaging;\r<br />\nusing DocumentFormat.OpenXml.Spreadsheet;<br />\n",
+    "PostedDate": "2014-07-21T06:26:15.817-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1274749",
+    "ThreadId": "552307",
+    "Html": "OK found it\r<br />\n<br />\nGo to your Solution Explorer &gt; right click on references and then click Manage NuGet Packages. Then search in tab &quot;Online&quot; for DocumentFormat.OpenXml and install it. After you can use DocumentFormat.OpenXml.<br />\n",
+    "PostedDate": "2014-07-21T06:39:23.37-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

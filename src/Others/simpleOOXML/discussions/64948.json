@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "221195",
+    "ThreadId": "64948",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp; I want to get a cetain column , but after some hard search , I didn't find any way.</p>\r\n<p>&nbsp; I mean something like this:</p>\r\n<p>Column clm=worksheet.Columns[0];</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp; I saw <a id=\"ctl00_ctl00_MasterContent_Content_PostRepeater_ctl02_UserNameLink\" href=\"http://www.codeplex.com/site/users/view/DimonNew\">DimonNew</a>'s post of insert a new column:</p>\r\n<p>Columns cols = new Columns( new Column() { Min = 7, Max = 7, CustomWidth = true, Width = 20} );</p>\r\n<p>worksheetPart.Worksheet.InsertBefore&lt;Columns&gt;(cols, worksheetPart.Worksheet.GetFirstChild&lt;SheetData&gt;());</p>\r\n<p>&nbsp;</p>\r\n<p>But is there any way of get the column instead of insert?</p>\r\n<p>Thanks.</p>\r\n<p>&nbsp;</p>\r\n<p>Moosdau</p>",
+    "PostedDate": "2009-08-08T20:36:39.097-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

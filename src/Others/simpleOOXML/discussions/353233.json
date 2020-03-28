@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "827368",
+    "ThreadId": "353233",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>i would like to ask if one of the releases is .net 2&nbsp;compatible??</p>\r\n<p>thanks in advance.</p>\r\n",
+    "PostedDate": "2012-04-23T08:13:06.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "827459",
+    "ThreadId": "353233",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>This is for .net 3.0 or later because it uses part of the .net 3.0 framework that is not supported in version 2.0.</p>",
+    "PostedDate": "2012-04-23T11:23:53.56-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "827771",
+    "ThreadId": "353233",
+    "Html": "<p>thanks</p>",
+    "PostedDate": "2012-04-24T02:30:34.733-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

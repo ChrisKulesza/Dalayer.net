@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "729866",
+    "ThreadId": "287210",
+    "Html": "\r\n<p>Hi.</p>\r\n<p>If a Cell has a CellFormula assigned, is there any way to get the calculated value of the formula? Since Excel is using its own calculating mechanism, it is done on the fly, so I was wondering if there is any other way to get the calculated value, except\r\n for running COM object excel, and open the document?</p>\r\n<p>Thanks.</p>\r\n",
+    "PostedDate": "2012-01-24T04:46:46.51-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

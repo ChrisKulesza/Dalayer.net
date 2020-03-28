@@ -1,0 +1,56 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "My code is the following:\n \ndocumentStream is a stream based on BUG.xlsx.\n \n                SpreadsheetDocument document = SpreadsheetDocument.Open(documentStream, true);\n                WorksheetPart worksheetPart = SpreadsheetReader.GetWorksheetPartByName(document, \"ОТЧЕТ\");\n                WorksheetWriter writer = new WorksheetWriter(document, worksheetPart); \n                writer.PasteText(\"B6\", \"Hello World\");\n \n                //Save to the memory stream \n                SpreadsheetWriter.Save(document); \n \nRight at the moment of calling of SpreadsheetWriter.Save(document) I get equence contains no elements\" exception.",
+    "LastUpdatedDate": "2014-07-21T13:14:40.743-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "simpleOOXML",
+    "ReportedDate": "2012-05-17T01:46:12.177-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "\"Sequence contains no elements\" while SpreadsheetWriter.Save()",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 7985
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2908,
+      "FileName": "BUG.xlsx",
+      "DownloadUrl": ".\\2908"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "can someone please solve this issue ?\nI'am trying to solve if someone already has post it.",
+      "PostedDate": "2014-05-11T18:11:51.6-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Did you figure this out? I have exactly the same error.",
+      "PostedDate": "2014-07-21T13:14:40.743-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

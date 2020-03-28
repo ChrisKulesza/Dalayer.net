@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "413633",
+    "ThreadId": "203659",
+    "Html": "<p>It seems like the API is designed to write xlsx files, but can it also be used to read the contents of a xlsx file?</p>\r\n<p>WorksheetWriter.PastText makes it easy to write to a file, but a corresponding WorksheetReader.ReadText does not exists.</p>\r\n<p>I can browse the OOXML DOM using WorksheetReader.GetCell(..) but then I have to do all the hard work by myself :-(</p>\r\n<p>...or am I missing something here?<br><br>Regards,<br>Ren&eacute;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-03-03T04:48:58.533-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "729869",
+    "ThreadId": "203659",
+    "Html": "<p>almost 2 years later but I was wondering about the same and found the answer, I think.</p>\r\n<pre style=\"font-family: Consolas; font-size: 13; color: black; background: #e9e9e9;\">var cell = writer.FindCell(\"A1\");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />var val = cell.CellValue;<br />Console.WriteLine(val.Text);</pre>\r\n<p>Using WorksheetReaded instead of the writer would be a more logical way, but retrieving text worked for me.</p>",
+    "PostedDate": "2012-01-24T04:52:51.693-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

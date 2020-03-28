@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "202444",
+    "ThreadId": "59797",
+    "Html": "yes i am<br>\r\n<br>\r\n<br>\r\n-----Original Message-----<br>\r\nFrom: jameswestgate &lt;notifications@codeplex.com&gt;<br>\r\nTo: [email removed]<br>\r\nSent: Wed, Jun 17, 2009 5:35 am<br>\r\nSubject: Re: Help with Build error please [simpleOOXML:59718]<br>\r\n<br>\r\n\r\n\r\n<div id=\"AOLMsgPart_2_c4ac3246-6e96-46b3-8b66-c5351c0bd3f9\">\r\n\r\n\r\n\r\n<div>From: jameswestgate</div>\r\n\r\n\r\n<div id=ThreadNotificationPostBody>\r\n\r\n<div>Are you using .Net Framework 3.0 or later?</div>\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n<div>To add a post to this discussion, reply to this email (<a href=\"mailto:simpleOOXML@discussions.codeplex.com?subject=[simpleOOXML:59718]\">simpleOOXML@discussions.codeplex.com</a>)</div>\r\n\r\n\r\n<div>To start a new discussion for this project, email <a href=\"mailto:simpleOOXML@discussions.codeplex.com\">simpleOOXML@discussions.codeplex.com</a></div>\r\n\r\n\r\n<div>You are receiving this email because you subscribed to this discussion on CodePlex. You can <a href=\"http://www.codeplex.com/site/discussions/thread/unsubscribe/59718\">unsubscribe</a> on codePlex.com.</div>\r\n\r\n\r\n<div>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at codeplex.com</div>\r\n</div>\r\n</div>\r\n<div id=MAILCIAMB014-d4354a38de81a3><br> <hr style=\"margin-top:10px\">Make your summer sizzle with <a href=\"http://food.aol.com/grilling?ncid=emlcntusfood00000003\">fast and easy recipes</a> for the grill. </div>",
+    "PostedDate": "2009-06-17T05:16:34.583-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "202456",
+    "ThreadId": "59797",
+    "Html": "<p>Ok, I did a quick check and the binary wont work with the April CTP, it will look for the specific version only. I will upload a new release.</p>",
+    "PostedDate": "2009-06-17T05:38:05.273-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

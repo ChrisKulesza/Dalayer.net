@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "917281",
+    "ThreadId": "396845",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I've changed a method ToXmlBoolean(..) to provide empty string if given value is nullable instead of returning a false value</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">public</span> <span style=\"color:blue\">static</span> <span style=\"color:blue\">string</span> ToXmlBoolean(<span style=\"color:blue\">object</span> value)\r\n        {\r\n            <span style=\"color:blue\">bool</span> result = <span style=\"color:blue\">false</span>;\r\n            <span style=\"color:blue\">bool</span>.TryParse(value.ToString(), <span style=\"color:blue\">out</span> result);\r\n            <span style=\"color:blue\">return</span> (result) ? <span style=\"color:#a31515\">&quot;1&quot;</span> : <span style=\"color:#a31515\">&quot;0&quot;</span>;\r\n        }\r\n</pre>\r\n<pre>to</pre>\r\n<pre><div style=\"color:black; background-color:white\"><pre><span style=\"color:blue\">public</span> <span style=\"color:blue\">static</span> <span style=\"color:blue\">string</span> ToXmlBoolean(<span style=\"color:blue\">object</span> value)\r\n        {\r\n           <span style=\"color:blue\">if</span> (value == DBNull.Value)\r\n\t<span style=\"color:blue\">return</span> <span style=\"color:blue\">string</span>.Empty;\r\n\r\n            <span style=\"color:blue\">bool</span> result = <span style=\"color:blue\">false</span>;\r\n            <span style=\"color:blue\">bool</span>.TryParse(value.ToString(), <span style=\"color:blue\">out</span> result);\r\n            <span style=\"color:blue\">return</span> (result) ? <span style=\"color:#a31515\">&quot;1&quot;</span> : <span style=\"color:#a31515\">&quot;0&quot;</span>;\r\n        }\r\n</pre>\r\n<pre>Thank you for the project</pre>\r\n</div>\r\n</pre>\r\n</div>\r\n",
+    "PostedDate": "2012-09-25T07:43:38.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

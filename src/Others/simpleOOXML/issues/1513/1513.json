@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2009-07-13T00:54:23.607-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "In changeset 14947:\n \nWhen I add the Font Tahoma, which has no FontScheme, to the blank.xlsx Template, there happens an exeption at line 340 of SpreadsheetStyle.cs\n340            FontScheme = font.ChildElements.OfType<FontScheme>().First().CloneElement<FontScheme>();\n \nException-Message=\"Sequence contains no elements\"\n \nAnd really, by comparing Tahoma with Calibri in the Styles-Section:\nTahoma has no scheme val. But it should be: none.\nThis seems to be an error in Excel 2007 when saving.\n \n<x:font>\n    <x:b />\n    <x:sz val=\"10\" />\n    <x:color theme=\"1\" />\n    <x:name val=\"Calibri\" />\n    <x:family val=\"2\" />\n    <x:scheme val=\"minor\" />\n  </x:font>\n  <x:font>\n    <x:b />\n    <x:sz val=\"10\" />\n    <x:color theme=\"1\" />\n    <x:name val=\"Tahoma\" />\n    <x:family val=\"2\" />\n  </x:font>",
+    "LastUpdatedDate": "2013-05-16T03:43:44.963-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "simpleOOXML",
+    "ReportedDate": "2009-04-08T22:09:07.75-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Exception when Tahoma font added in blank.xlsx",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 1513
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

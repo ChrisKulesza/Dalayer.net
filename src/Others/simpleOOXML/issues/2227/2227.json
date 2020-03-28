@@ -1,0 +1,76 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2009-10-06T13:46:06.973-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "James, once again thanks for your effort! Simple OOXML really is a great library, and i already voted it 5*.\n \none issue though, when you use .PasteDataTable to past a DataTable that contains a typeof(float) column with a CultureInfo other than \"en-US\" (like \"de-AT\" in my case), the resulting .xlsx file is corrupt. this might have something to do with the fact that in Europe the comma \",\" is used as decimal separator.\nwhen i do a \"Thread.CurrentThread.CurrentCulture = new CultureInfo(\"en-US\");\" before exporting the .xlsx file everything works as expected.\n \nfor your reference i've attached a corrupt Excel file.\n \nthanks,\nTom",
+    "LastUpdatedDate": "2013-05-16T03:43:43.927-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "simpleOOXML",
+    "ReportedDate": "2009-07-14T00:19:10.597-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": ".PasteDataTable results in a corrupt .xlsx file when pasting a DataTable that contains typeof(float) columns with a CultureInfo other than \"en-US\"",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 2227
+  },
+  "FileAttachments": [
+    {
+      "FileId": 735,
+      "FileName": "ExcelExport.xlsx",
+      "DownloadUrl": ".\\735"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "any updates on this? ",
+      "PostedDate": "2009-09-24T00:10:32.307-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Fixed and uploaded to source. Will be in next build.",
+      "PostedDate": "2009-10-05T14:41:58.87-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-10-05T14:42:22.95-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-10-06T13:46:06.973-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:11:42-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T03:43:43.927-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

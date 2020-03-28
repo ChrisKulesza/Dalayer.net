@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "177438",
+    "ThreadId": "52751",
+    "Html": "Dear James you've done a great job with this project, thank you a lot!<br>\r\n<br>\r\nI didn't get it done to change font or font size in code (without altering your source-code).<br>\r\nI realized that in default style you set the first found font.<br>\r\nIt'd be very useful to include in the blank.xlsx template various different fonts (by the user) and be able to choose between those provided.<br>\r\nE.g. like passing the sequence number of the existing font to the style contructor or something as a simple solution.<br>\r\n<br>\r\nBest Regards, Heinrich\r\n",
+    "PostedDate": "2009-04-08T19:58:01.877-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "177460",
+    "ThreadId": "52751",
+    "Html": "Now I've got it, using SpreadsheetStyle.AddFont(font).\r\n",
+    "PostedDate": "2009-04-08T22:04:29.227-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "281946",
+    "ThreadId": "52751",
+    "Html": "<p>How do you set a font name?&nbsp; This is what I'm trying, but LocalName is read-only so I'm stuck.&nbsp; I don't see any other way (yet).</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">var</span> wrappedStyle = SpreadsheetStyle.GetDefault(doc);\r\nwrappedStyle.IsWrapped=<span style=\"color:Blue\">true</span>;\r\n\r\n<span style=\"color:Blue\">var</span> monospaceFont = <span style=\"color:Blue\">new</span> DocumentFormat.OpenXml.Spreadsheet.Font();\r\n<span style=\"color:Blue\">var</span> fontName = <span style=\"color:Blue\">new</span> DocumentFormat.OpenXml.Spreadsheet.FontName();\r\nfontName.LocalName = <span style=\"color:#A31515\">&quot;Consolas&quot;</span>;\r\nmonospaceFont.FontName = fontName;\r\nwrappedStyle.SetFont(monospaceFont);\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2010-01-26T10:43:10.163-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

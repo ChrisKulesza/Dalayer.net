@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1491409",
+    "ThreadId": "660829",
+    "Html": "Hey guys,\r<br />\n<br />\nHas anyone been able to paste multiline text into a single excel cell using writer.PasteText??\r<br />\nI tried using \\r, \\n, \\r\\n, but with no luck...<br />\n",
+    "PostedDate": "2017-01-20T06:29:22.723-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "209814",
+    "ThreadId": "61820",
+    "Html": "<p>Hi there,</p>\r\n<p>I know that the Autofit and Bestfit properties doesn't really autofit the contents of cells, but is there a way that we can maybe calculate the width of the contents and then apply that width to the width of the cell if the Autofit and Bestfit properties has been specified?</p>\r\n<p>I haven't really tried it, but I don't want to waste my time if somebody else has done the job.</p>\r\n<p>Thanks,</p>\r\n<p>MS</p>",
+    "PostedDate": "2009-07-08T01:40:28.863-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211334",
+    "ThreadId": "61820",
+    "Html": "<p>There is no way of knowing how the content is going to be rendered by the application reading the ooxml file so I dont think this is possible.</p>",
+    "PostedDate": "2009-07-13T01:02:42.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "213754",
+    "ThreadId": "61820",
+    "Html": "<p>is there a way to set Autofit / Bestfit in code? this isn't documented in the unit tests :(</p>",
+    "PostedDate": "2009-07-20T04:38:02.43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

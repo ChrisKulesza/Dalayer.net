@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "642438",
+    "ThreadId": "265186",
+    "Html": "\r\n<p>I have recently inherited some code which was built against Simple OOXml to Export DataTables to a spreadsheet stored in a MemoryStream. When this code was put into production, it was far too slow for our uses. To get around the problem, I built a DataTable\r\n exporter manually using the OpenXmlWriter class. Using this approach, I was unable to reproduce some of the formatting that was done using Simple OOXml.&nbsp;</p>\r\n<p>Next, I attempted to open the stream I had already constructed, using the following code:</p>\r\n<p>&nbsp;</p>\r\n<pre>//Exports a DataTable to a MemoryStream using OpenXmlWriter\r\nMemoryStream myStream = ExportDataTableToStream(myTable);\r\n\r\nSpreadsheetDocument doc = SpreadsheetDocument.Open(myStream, true);\r\nWorksheetPart SheetOutput = SpreadsheetWriter.InsertWorksheet(doc, &quot;Output&quot;);</pre>\r\n<pre><br></pre>\r\n<pre>After doing this, I try to pull a SpreadsheetStyle object out of the opened MemoryStream:</pre>\r\n<pre><br><pre>SpreadsheetStyle footerStyle = SpreadsheetReader.GetDefaultStyle(doc);</pre>\r\n<pre><br></pre>\r\n<pre>This doesn;t work. I either get an exception, or null is returned. What confuses me is that in the code I inherited, a blank SpreadsheetDocument was created using SpreadsheetDocument.Open, and the SpreadsheetStyle&nbsp;</pre>\r\n<pre>object existed. I'm not sure what I am doing wrong, but is there an easy fix? Any help would be appreciated.</pre>\r\n<pre><br></pre>\r\n<pre><br></pre>\r\n<pre><br></pre>\r\n<pre><br></pre>\r\n<pre><br></pre>\r\n</pre>\r\n<pre><br></pre>\r\n<pre><br></pre>\r\n",
+    "PostedDate": "2011-07-14T09:46:29.92-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

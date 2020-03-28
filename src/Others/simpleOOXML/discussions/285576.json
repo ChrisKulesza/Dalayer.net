@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "722952",
+    "ThreadId": "285576",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I start to learn the library.</p>\r\n<p>Hi,</p>\r\n<p>Following the unit tests, I see that although the below method (in WorkSheetWriter.cs), intends to write out the column headers, the generated sheet does not include them.</p>\r\n<p>I've modifed the unit test to send the List&lt;string&gt; of column names as the 6th param, to no avail.</p>\r\n<p>Any suggestion?</p>\r\n<p>Thanks!</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; /// &lt;summary&gt;</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; /// Pastes a datatable into a worksheet at the location specified and returns the rowindex of the last row.</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; /// &lt;/summary&gt;</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; /// &lt;remarks&gt;</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; /// Includes column headers and all columns, or columns if columnNames is supplied.</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; /// &lt;/remarks&gt;</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; public static uint PasteDataTable(DataTable dt, SpreadsheetDocument spreadsheet, WorksheetPart worksheetPart, string column, uint rowIndex, List&lt;string&gt; columnNames, SpreadsheetStyle style)</p>\r\n",
+    "PostedDate": "2012-01-10T01:29:38.21-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1278581",
+    "ThreadId": "285576",
+    "Html": "Hi YHollander,\r<br />\nDid you have any luck with resolving this issue? I have been working at it all day today.<br />\n",
+    "PostedDate": "2014-07-28T19:16:15.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1278582",
+    "ThreadId": "285576",
+    "Html": "This is for anyone who might come across this issue:\r<br />\n<br />\nI was able to find a temporary fix by using the code at John's site here: <a href=\"http://johnlivingstontech.blogspot.com/2010/06/create-excel-workbook-from-dataset.html\" rel=\"nofollow\">http://johnlivingstontech.blogspot.com/2010/06/create-excel-workbook-from-dataset.html</a>\r<br />\n<br />\nCode:\r<br />\nfor (int x = 0; x &lt; ds.Tables[i].Columns.Count; x++) <br />\n<pre><code>                { \n                    string columnName = GetExcelColumnValue(x + 1);                       \n                    writer.PasteText(columnName + &quot;1&quot;, \n                        ds.Tables[i].Columns[x].ColumnName, style); \n                } \n</code></pre>\n\nThanks John!<br />\n",
+    "PostedDate": "2014-07-28T19:29:08.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

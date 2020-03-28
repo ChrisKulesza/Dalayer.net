@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1004411",
+    "ThreadId": "433896",
+    "Html": "I've created template xlsx file and now I'm trying to copy the cell style from one cell to a new one on a newly created row. But the cell style format doesn't seem to be holding. I'm wondering if I've missed something.\r<br />\n<br />\n<br />\nSpreadsheetStyle MonthStyle = WorksheetReader.GetStyle(Document, wsPart, &quot;A&quot;, 19);\r<br />\n<br />\n.  .  .  (a bunch of code)\r<br />\n<br />\nws.SetStyle(MonthStyle, &quot;A19&quot;);\r<br />\n<br />\nThe original cell appears as &quot;January 1980&quot; and the format is &quot;mmmm yyyy&quot;\r<br />\n<br />\nWhen the code is finished cell appears as &quot;38,231&quot; and the format is &quot;#,###&quot; \r<br />\n<br />\nIf I change the format to &quot;mmmm yyyy&quot; it correctly shows &quot;September 2004&quot;<br />\n",
+    "PostedDate": "2013-02-20T19:46:45.2-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1352205",
+    "ThreadId": "433896",
+    "Html": "I'm trying to do exactly the same thing....\r<br />\n<br />\nDid you manage to find a solution?<br />\n",
+    "PostedDate": "2015-02-13T06:29:07.22-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

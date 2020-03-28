@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1492714",
+    "ThreadId": "661368",
+    "Html": "When using <strong>WorksheetWriter.PasteDataTable()</strong>, is there a way to format the pasted range (i.e. G7:I9) <strong>As Table</strong>, using a specific style (e.g. &quot;<strong>Table Style Light 9</strong>&quot;), while keeping existing <strong>Headers</strong>?\r<br />\n<br />\nIf yes, that would be incredible!\r<br />\n<br />\n<img src=\"https://i.stack.imgur.com/Jl8ln.jpg\" alt=\"Image\" />\r<br />\n<img src=\"https://i.stack.imgur.com/yZcTs.jpg\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2017-02-15T06:54:47.81-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

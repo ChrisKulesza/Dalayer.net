@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "270576",
+    "ThreadId": "79024",
+    "Html": "<p>Hi,</p>\r\n<p>I downloaded the source code and attempted to recompile the assembly in the project DocumentFormat.OpenXml.Extensions against Open XML SDK 2.0 December 2009 CTP for Microsoft Office and got the following eror:</p>\r\n<p>Error&nbsp;&nbsp; &nbsp;1&nbsp;&nbsp;&nbsp; The type or namespace name 'NumberFormat' could not be found (are you missing a using directive or an assembly reference?)</p>\r\n<p>originating&nbsp; from&nbsp; simpleooxml-29325\\DocumentFormat.OpenXml.Extensions\\SpreadsheetStyle.cs</p>\r\n<p>I could not find out where the class NumberFormat is declared. I probably miss some simple thing. Could some reference be missing?</p>\r\n<p>Help is appreciated</p>\r\n<p>Merry christmas</p>\r\n<p>&nbsp;</p>\r\n<p>Anatoli Strigin</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-24T05:33:13.013-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "270701",
+    "ThreadId": "79024",
+    "Html": "<p>This is to do with the December 2009 CTP build of the SDK. I will try update the code in the next few days, in the meantime try and use the August 2009 CTP instead.</p>",
+    "PostedDate": "2009-12-25T02:31:58.663-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "281543",
+    "ThreadId": "79024",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>jameswestgate wrote:</strong><br>\r\n<p>This is to do with the December 2009 CTP build of the SDK. I will try update the code in the next few days, in the meantime try and use the August 2009 CTP instead.</p>\r\n</blockquote>\r\n<p>Hi James,</p>\r\n<p>Any ETA on this update? The August CTP doesn't appear to be available for download any more.</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2010-01-25T12:06:10.397-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "281553",
+    "ThreadId": "79024",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>blitzd wrote:</strong><br>\r\n<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>jameswestgate wrote:</strong><br>\r\n<p>This is to do with the December 2009 CTP build of the SDK. I will try update the code in the next few days, in the meantime try and use the August 2009 CTP instead.</p>\r\n</blockquote>\r\n<p>Hi James,</p>\r\n<p>Any ETA on this update? The August CTP doesn't appear to be available for download any more.</p>\r\n<p>Thanks!</p>\r\n</blockquote>\r\n<p>Just FYI,</p>\r\n<p>It appears it's not too difficult to get the project to compile with the Dec CTP. I did a solution wide find/replace for NumberFormat to NumberingFormat, and then fixed the few instances (12) where NumberFormatId got changed to NumberingFormatId, as well as ApplyNumberFormat (two) got changed to ApplyNumberingFormat. All unit tests passed after these changes, and my project compiled fine with the Dec CTP and the newly compiled extensions DLL.</p>",
+    "PostedDate": "2010-01-25T12:26:08.487-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

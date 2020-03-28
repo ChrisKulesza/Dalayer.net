@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "546034",
+    "ThreadId": "240977",
+    "Html": "\r\n<p>I am new to OOXML and I want to learn how to make tables with text in Word.</p>\r\n<p>To start, how would I create a 4 x 4 table with some plain text in each cell?</p>\r\n<p>I'm using the following class:</p>\r\n<p>DocumentFormat.OpenXml.Wordprocessing.Document doc = document.MainDocumentPart.Document;</p>\r\n<p>What would the code be to add my desired table with text&nbsp;to this document?</p>\r\n",
+    "PostedDate": "2011-01-08T12:48:04.877-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "546830",
+    "ThreadId": "240977",
+    "Html": "\r\n<p>Found this great article:</p>\r\n<p><a href=\"http://www.codeproject.com/KB/office/OpenXML-SDK-HelloWorld.aspx\">http://www.codeproject.com/KB/office/OpenXML-SDK-HelloWorld.aspx</a></p>\r\n",
+    "PostedDate": "2011-01-10T09:47:05.423-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

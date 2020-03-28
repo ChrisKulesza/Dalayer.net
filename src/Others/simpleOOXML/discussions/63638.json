@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "216383",
+    "ThreadId": "63638",
+    "Html": "<p>Hello James,</p>\r\n<p><span style=\"white-space:pre\"> </span>I have a dataset I create from SQL that I am looping through to create separate spreadsheets. My problem is that unless I use the relationshipid from one of the spreadsheets I cannot save the doc with spreadsheetwriter.save(doc). Even if I use an existing relationshipid it doesn't work if I have more than 1 extra sheet and excel has to fix it before I can read it.</p>\r\n<p>So how do I make extra sheets on a workbook and populate them with good relationship values.</p>",
+    "PostedDate": "2009-07-27T07:22:34.813-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "292283",
+    "ThreadId": "63638",
+    "Html": "<p>Daniel,</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I'm in the same boat. Did you ever manage to figure out how to add more worksheets?</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;I've examined the unit tests and, based on those, I've determined that new sheets can't be added. Only one worksheet is allowed and it MUST be called &quot;Sheet1&quot;.&nbsp; ;-)</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Seriously though, if anyone can tell me how to add a new worksheet, it'd be greatly appreciated!</p>\r\n<p>Don</p>",
+    "PostedDate": "2010-02-18T09:57:35.233-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "292776",
+    "ThreadId": "63638",
+    "Html": "<p>I never got around this.</p>",
+    "PostedDate": "2010-02-19T11:03:53.767-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "459568",
+    "ThreadId": "63638",
+    "Html": "<p>Hi,</p>\r\n<p>I've made a quick workaround, tune it, I haven't done any serious stresstest. This method creates a new sheet if it does not exists. And returns it.</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><div style=\"color:black;background-color:white\"><pre><span style=\"color:blue\">public</span> WorksheetPart Worksheet(<span style=\"color:blue\">string</span> sheetname)\r\n{\r\n\t<span style=\"color:green\">// Get sheets where sheetname is the provided text.</span>\r\n\tIEnumerable&lt;Sheet&gt; sheets = doc.WorkbookPart.Workbook.Descendants&lt;Sheet&gt;().Where(s =&gt; s.Name == sheetname);\r\n\r\n\t<span style=\"color:green\">// If the specified worksheet does not exist, create it.</span>\r\n\t<span style=\"color:blue\">if</span> (sheets.Count() == 0)\r\n\t{\r\n\t\t<span style=\"color:green\">// Find out the next id</span>\r\n\t\t<span style=\"color:blue\">uint</span> newId = (<span style=\"color:blue\">uint</span>)(doc.Package.GetRelationships().Count() + 1);\r\n\t\t<span style=\"color:green\">// do not set this to rId...</span>\r\n\t\t<span style=\"color:blue\">string</span> rId = <span style=\"color:#a31515\">&quot;relId&quot;</span> + newId;\r\n\r\n\t\t<span style=\"color:blue\">int</span> sheetnumber = doc.WorkbookPart.WorksheetParts.Count() + 1;\r\n\r\n\t\t<span style=\"color:green\">// Create the new worksheetpart</span>\r\n\t\tWorksheetPart wsp = doc.WorkbookPart.AddNewPart&lt;WorksheetPart&gt;(rId);\r\n\r\n\t\t<span style=\"color:green\">// Add important stuff :-)</span>\r\n\t\tdoc.WorkbookPart.Workbook.Save();\r\n\t\tdoc.WorkbookPart.Workbook.Sheets.AppendChild&lt;Sheet&gt;(<span style=\"color:blue\">new</span> Sheet() { Id = rId, SheetId = newId, Name = sheetname });\r\n\t\tdoc.WorkbookPart.Workbook.Save();\r\n\t\twsp.Worksheet = <span style=\"color:blue\">new</span> Worksheet();\r\n\t\twsp.Worksheet.AddNamespaceDeclaration(<span style=\"color:#a31515\">&quot;r&quot;</span>, <span style=\"color:#a31515\">&quot;http://schemas.openxmlformats.org/officeDocument/2006/relationships&quot;</span>);\r\n\t\twsp.Worksheet.AppendChild&lt;SheetDimension&gt;(<span style=\"color:blue\">new</span> SheetDimension());\r\n\t\tdoc.WorkbookPart.Workbook.Save();\r\n\t\twsp.Worksheet.AppendChild&lt;SheetViews&gt;(<span style=\"color:blue\">new</span> SheetViews()).AppendChild&lt;SheetView&gt;(<span style=\"color:blue\">new</span> SheetView() { WorkbookViewId = 0 });\r\n\t\tdoc.WorkbookPart.Workbook.Save();\r\n\t\twsp.Worksheet.AppendChild&lt;SheetFormatProperties&gt;(<span style=\"color:blue\">new</span> SheetFormatProperties() { DefaultRowHeight = 15 });\r\n\t\tdoc.WorkbookPart.Workbook.Save();<br>                wsp.Worksheet.AppendChild&lt;SheetData&gt;(<span style=\"color:blue\">new</span> SheetData());\r\n\t\tdoc.WorkbookPart.Workbook.Save();\r\n\t\twsp.Worksheet.AppendChild&lt;PageMargins&gt;(<span style=\"color:blue\">new</span> PageMargins() { Left = 0.7, Right = 0.7, Top = 0.75, Bottom = 0.75, Header = 0.3, Footer = 0.3 });\r\n\t\tdoc.WorkbookPart.Workbook.Save();\r\n\r\n\t\t<span style=\"color:green\">// Store the relationship of the workbook and the sheet</span>\r\n\t\tdoc.Package.CreateRelationship(<span style=\"color:blue\">new</span> Uri(<span style=\"color:#a31515\">&quot;worksheets/sheet&quot;</span> + sheetnumber + <span style=\"color:#a31515\">&quot;.xml&quot;</span>, UriKind.Relative), System.IO.Packaging.TargetMode.Internal, <span style=\"color:#a31515\">&quot;http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet&quot;</span>, rId);\r\n\t\tdoc.Package.Flush(); <span style=\"color:#008000\">// !!!</span>\r\n\t\tdoc.WorkbookPart.Workbook.Save();\r\n\t\t<span style=\"color:green\">// return the new workshe<span style=\"color:#008000\">etpart</span></span>\r\n\t\t<span style=\"color:blue\">return</span> wsp;\r\n\t}\r\n\r\n\t<span style=\"color:green\">// Return the sheet we found</span>\r\n\t<span style=\"color:blue\">return</span> (WorksheetPart)doc.WorkbookPart.GetPartById(sheets.First().Id);\r\n}</pre>\r\n</div>\r\n</pre>\r\n</div>\r\n<p>This is how I use it:</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">public</span> <span style=\"color:blue\">string</span> <span style=\"color:blue\">this</span>[<span style=\"color:blue\">string</span> sheet, <span style=\"color:blue\">string</span> col, <span style=\"color:blue\">int</span> row]\r\n{\r\n\t<span style=\"color:blue\">get</span>\r\n\t{\r\n\t\t<span style=\"color:blue\">return</span> WorksheetReader.GetCell(col, (<span style=\"color:blue\">uint</span>)row, Worksheet(sheet)).CellValue.Text;\r\n\t}\r\n\t<span style=\"color:blue\">set</span>\r\n\t{\r\n\t\t<span style=\"color:blue\">new</span> WorksheetWriter(doc, Worksheet(sheet)).PasteText(col + row, value);\r\n\t}\r\n}</pre>\r\n</div>\r\n<p>The variable named doc is a&nbsp;SpreadsheetDocument.</p>\r\n<p>Hope that helps.</p>",
+    "PostedDate": "2010-06-24T09:10:12.427-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "465636",
+    "ThreadId": "63638",
+    "Html": "This has been tested and added to the next release. Many thanks.",
+    "PostedDate": "2010-07-09T14:16:51.367-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "541612",
+    "ThreadId": "63638",
+    "Html": "\r\n<p>Hi koshinae and thanks for the code...however, when using this code the spreadsheet document seems to become corrupt in cases when a new worksheets are created.\r\n<br>\r\nIn other words, passing the names of the default worksheets (Sheet1..3) works fine but if I pass a name that causes the if-statement to be true the generated spreadsheet&nbsp;document becomes corrupt.</p>\r\n<p>I used the OpenXmlValidator-class to get some more information, it says:<br>\r\n&quot;The relationship 'relId4' referenced by attribute 'http://schemas.openxmlformats.org/officeDocument/2006/relationships:id' does not exist.&quot;</p>\r\n<p>Have you got any clue?</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-12-29T04:20:53.44-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "541635",
+    "ThreadId": "63638",
+    "Html": "\r\n<p>I think I found the problem, I changed the extension from &quot;xlsx&quot; to &quot;zip&quot; to inspect what was in the package..<br>\r\nIt seems that the relationships for the &quot;new&quot; worksheets are stored at the wrong place..the relationships for the original worksheets (1..3) are stored in the xml-file &quot;xl/_rels/workbook.xml.rels&quot; while the relationships &quot;rel4&quot; worksheets&nbsp;was stored in\r\n the file &quot;_rels/.rels&quot;.</p>\r\n<p>I modified the content of thouse files manually and then the file wasn't corrupt anymore and could be opened in Excel.</p>\r\n<p>However, I have no clue how to do this programmatically...I guess the line below needs to be changed somehow</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>doc.Package.CreateRelationship(<span style=\"color:blue\">new</span> Uri(<span style=\"color:#a31515\">&quot;worksheets/sheet&quot;</span> &#43; sheetnumber &#43; <span style=\"color:#a31515\">&quot;.xml&quot;</span>, UriKind.Relative), System.IO.Packaging.TargetMode.Internal, <span style=\"color:#a31515\">&quot;http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet&quot;</span>, rId);<span style=\"color:green\">&nbsp;</span>&nbsp;</pre>\r\n<pre>&nbsp;</pre>\r\n<pre><p>&nbsp;</p></pre>\r\n</div>\r\n",
+    "PostedDate": "2010-12-29T05:05:54.85-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

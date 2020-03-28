@@ -1,0 +1,110 @@
+[
+  {
+    "Id": 1513,
+    "Title": "Exception when Tahoma font added in blank.xlsx"
+  },
+  {
+    "Id": 1849,
+    "Title": "WorksheetWriter.PasteValues sometimes creates a corrupt .xlsx file if List<string> is used"
+  },
+  {
+    "Id": 1850,
+    "Title": "System.MissingMethodException occurred (Method not found: \\\"DocumentFormat.OpenXml.StringValue DocumentFormat.OpenXml.Spreadsheet.ColorType.get_Rgb()\\)"
+  },
+  {
+    "Id": 2021,
+    "Title": "Can't build the project with OOXML SDK lib 2.0.3930.0"
+  },
+  {
+    "Id": 2022,
+    "Title": "NullReferenceException at WorksheetReader.GetStyle() if a cell doesn't have a style"
+  },
+  {
+    "Id": 2024,
+    "Title": "Incorrect cells ordering in WorksheetWriter.FindCell() when adding cells beyond column Z"
+  },
+  {
+    "Id": 2227,
+    "Title": ".PasteDataTable results in a corrupt .xlsx file when pasting a DataTable that contains typeof(float) columns with a CultureInfo other than \"en-US\""
+  },
+  {
+    "Id": 2244,
+    "Title": "Adding DeleteRows functions"
+  },
+  {
+    "Id": 2275,
+    "Title": "Feature Request: support for excel charts"
+  },
+  {
+    "Id": 2291,
+    "Title": "WorksheetWritet.DataTablePaste: incorrect cells order when using List<string> columnNames parameter"
+  },
+  {
+    "Id": 2307,
+    "Title": "Feature Request: import excel (.xls) files"
+  },
+  {
+    "Id": 2768,
+    "Title": "Windows cannot find .....\\Content.IE5\\XRCR3ZQ8\\performanceCA9103IG.xlsx"
+  },
+  {
+    "Id": 2903,
+    "Title": "Corrupt Spreadsheet with PasteDataTable with bit Fields"
+  },
+  {
+    "Id": 3230,
+    "Title": "Spreadsheetwriter fails with decimal datatype"
+  },
+  {
+    "Id": 3504,
+    "Title": "Bug in WorksheetReader.GetStyle"
+  },
+  {
+    "Id": 4096,
+    "Title": "Bug in SpreadsheetWriter.cs, method name: SetRowSpans"
+  },
+  {
+    "Id": 5589,
+    "Title": "WorksheetWriter.cs.PasteDataTable method should handle a formula"
+  },
+  {
+    "Id": 5812,
+    "Title": "Writing DataTable into SpreedSheet"
+  },
+  {
+    "Id": 6108,
+    "Title": "modifying font on a cell"
+  },
+  {
+    "Id": 6217,
+    "Title": "WorksheetWriter.PasteDataTable - Corrupt excel (corrupt dateformat?)"
+  },
+  {
+    "Id": 7557,
+    "Title": "Creating Excel File Using C# Without Installing Office?"
+  },
+  {
+    "Id": 7695,
+    "Title": "Bug in SpreadsheetWriter.cs, method name: SetWorksheetDimension"
+  },
+  {
+    "Id": 7985,
+    "Title": "\"Sequence contains no elements\" while SpreadsheetWriter.Save()"
+  },
+  {
+    "Id": 8377,
+    "Title": "Invalid XLSX file after simple operation"
+  },
+  {
+    "Id": 9268,
+    "Title": "Does OOXML allow Word mergefields?"
+  },
+  {
+    "Id": 9327,
+    "Title": "how to add DropDown list into the Excel Sheet cell..."
+  },
+  {
+    "Id": 9690,
+    "Title": "OpenXml.Extensions v2.0.50727 not working with OpenXML v2.5"
+  }
+]

@@ -1,0 +1,16 @@
+﻿extensions: designer.cs generated.cs
+extensions: .cs .cpp .h 
+// GNU GENERAL PUBLIC LICENSE Copyright (c) 2020 Javier Cañon | www.javiercanon.com 
+extensions: .sql 
+/* GNU GENERAL PUBLIC LICENSE Copyright (c) 2020 Javier Cañon | www.javiercanon.com */
+extensions: .aspx .ascx
+<%-- 
+GNU GENERAL PUBLIC LICENSE Copyright (c) 2020  Javier Cañon | www.javiercanon.com
+--%>
+extensions: .vb
+'GNU GENERAL PUBLIC LICENSE Copyright (c) 2020  Javier Cañon | www.javiercanon.com
+extensions:  .xml .config .xsd
+<!--
+GNU GENERAL PUBLIC LICENSE Copyright (c) 2020  Javier Cañon | www.javiercanon.com
+-->
+

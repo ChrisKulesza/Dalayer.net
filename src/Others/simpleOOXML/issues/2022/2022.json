@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2009-07-13T00:50:48.62-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "In this case Cell.StyleIndex is null which should be checked together with the cell == null check.",
+    "LastUpdatedDate": "2013-05-16T03:43:44.277-07:00",
+    "PlannedForRelease": "Simple OOXML 2.0.3341",
+    "ReleaseVisibleToPublic": true,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "simpleOOXML",
+    "ReportedDate": "2009-06-18T03:27:54.003-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "NullReferenceException at WorksheetReader.GetStyle() if a cell doesn't have a style",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 2022
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

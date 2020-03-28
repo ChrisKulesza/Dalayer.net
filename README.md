@@ -1,127 +1,55 @@
-# NReco.Data
-Lightweight high-performance data access components for generating SQL commands, mapping results to strongly typed POCO models or dictionaries, schema-less CRUD-operations with RecordSet. 
+# Dalayer.net
+* Lightweight high-performance data access components for query SQL, Excel, CSV, etc. 
+* CRUD operations with RecordSet, Dataset, or directly. 
+* Cache.
 
-NuGet | Windows x64 | Ubuntu 14.04
---- | --- | ---
-[![NuGet Release](https://img.shields.io/nuget/v/NReco.Data.svg)](https://www.nuget.org/packages/NReco.Data/) | [![AppVeyor](https://img.shields.io/appveyor/ci/nreco/data/master.svg)](https://ci.appveyor.com/project/nreco/data) | [![Travis CI](https://img.shields.io/travis/nreco/data/master.svg)](https://travis-ci.org/nreco/data) 
+## Philosophy of Javier Cañon
+* KISS by design and programming. An acronym for "keep it simple, stupid" or "keep it stupid simple", is a design principle. The KISS principle states that most systems work best if they are kept simple rather than made complicated; therefore, simplicity should be a key goal in design, and unnecessary complexity should be avoided. Variations on the phrase include: "Keep it simple, silly", "keep it short and simple", "keep it simple and straightforward", "keep it small and simple", or "keep it stupid simple".
 
-* very fast: NReco.Data shows almost the same performance as Dapper but offers more features
-* abstract DB-independent [Query structure](https://github.com/nreco/data/wiki/Query): no need to compose raw SQL in the code + query can be constructed dynamically (in the run-time)
-* automated CRUD commands generation
-* generate several SQL statements into one IDbCommand (batch inserts, updates, selects for multiple recordsets: *DbBatchCommandBuilder*)
-* supports mapping to annotated POCO models (EF Core entity models), allows customized mapping of query result 
-* API for schema-less data access (dictionaries, RecordSet, DataTable)
-* can handle results returned by stored procedure, including multiple record sets
-* application-level data views (for complex SQL queries) that accessed like simple read-only tables (DbDataView)
-* parser for compact string query representation: [relex](https://github.com/nreco/data/wiki/Relex) expressions
-* can be used with any existing ADO.NET data provider (SQL Server, PostgreSql, Sqlite, MySql etc)
-* supports .NET Framework 4.5+, .NET Core 2.x / 3.x (netstandard2.0)
+* Select the best tools for the job, use tools that take less time to finish the job.
+* Productivity over complexity and avoid unnecessary complexity for elegant or beauty code.
 
-## Quick reference
-Class | Dependencies | Purpose
---- | --- | ---
-`DbFactory` | | incapsulates DB-specific functions and conventions 
-`DbCommandBuilder` | *IDbFactory* | composes *IDbCommand* and SQL text for SELECT/UPDATE/DELETE/INSERT, handles app-level dataviews
-`DbDataAdapter` | *IDbCommandBuilder*, *IDbConnection* | CRUD operations for model, dictionary, *DataTable* or *[RecordSet](https://github.com/nreco/data/wiki/RecordSet)*: Insert/Update/Delete/Select. Async versions are supported for all methods.
-`Query` | | Represents abstract query to database; used as parameter in *DbCommandBuilder*, *DbDataAdapter*
-`RelexParser` | | Parsers query string expression ([Relex](https://github.com/nreco/data/wiki/Relex)) into *Query* structure
-`RecordSet` | | [RecordSet model](https://github.com/nreco/data/wiki/RecordSet) represents in-memory data records, this is lightweight and efficient replacement for classic *DataTable*/*DataRow*
-`DataReaderResult` | *IDataReader* | reads data from any data reader implementation and efficiently maps it to models, dictionaries, *DataTable* or *RecordSet*
+* Computers are machines, more powerful every year, give them hard work, concentrate on being productive.
 
-NReco.Data documentation:
-* [Getting started and HowTos](https://github.com/nreco/data/wiki)
-* [Full API Reference](http://www.nrecosite.com/doc/NReco.Data/)
-* something is still not clear? Feel free to [ask a question on StackOverflow](http://stackoverflow.com/questions/ask?tags=nreco,c%23) 
 
-## How to use
-Generic implementation of `DbFactory` can be used with any ADO.NET connector. 
+## Issues and Bug Traking ##
+Please submit *bug reports* or *feature requests* on GitHub:
+* [Issue | Request Features](https://github.com/JavierCanon/Microsoft-SQL-Server-Scripts-Utils/issues)
 
-**DbFactory initialization for SqlClient**:
-```
-var dbFactory = new DbFactory(System.Data.SqlClient.SqlClientFactory.Instance) {
-	LastInsertIdSelectText = "SELECT @@IDENTITY" };
-```
-**DbFactory initialization for Mysql**:
-```
-var dbFactory = new DbFactory(MySql.Data.MySqlClient.MySqlClientFactory.Instance) {
-	LastInsertIdSelectText = "SELECT LAST_INSERT_ID()" };
-```
-**DbFactory initialization for Postgresql**:
-```
-var dbFactory = new DbFactory(Npgsql.NpgsqlFactory.Instance) {
-	LastInsertIdSelectText = "SELECT lastval()" };
-```
-**DbFactory initialization for Sqlite**:
-```
-var dbFactory = new DbFactory(Microsoft.Data.Sqlite.SqliteFactory.Instance) {
-	LastInsertIdSelectText = "SELECT last_insert_rowid()" };
-```
+## Requeriments ##
 
-**DbCommandBuilder** generates SQL commands by [Query](https://github.com/nreco/data/wiki/Query):
-```
-var dbCmdBuilder = new DbCommandBuilder(dbFactory);
-var selectCmd = dbCmdBuilder.GetSelectCommand( 
-	new Query("Employees", (QField)"BirthDate" > new QConst(new DateTime(1960,1,1)) ) );
-var insertCmd = dbCmdBuilder.GetInsertCommand(
-	"Employees", new { Name = "John Smith", BirthDate = new DateTime(1980,1,1) } );
-var deleteCmd = dbCmdBuilder.GetDeleteCommand(
-	new Query("Employees", (QField)"Name" == (QConst)"John Smith" ) );
-```
+* .Net Framework 4.8
 
-**DbDataAdapter** - provides simple API for CRUD-operations:
-```
-var dbConnection = dbFactory.CreateConnection();
-dbConnection.ConnectionString = "<db_connection_string>";
-var dbAdapter = new DbDataAdapter(dbConnection, dbCmdBuilder);
-// map select results to POCO models
-var employeeModelsList = dbAdapter.Select( new Query("Employees") ).ToList<Employee>();
-// read select result to dictionary
-var employeeDictionary = dbAdapter.Select( 
-    new Query("Employees", (QField)"EmployeeID"==(QConst)newEmployee.EmployeeID ).Select("FirstName","LastName") 
-  ).ToDictionary();
-// update by dictionary
-dbAdapter.Update( 
-	new Query("Employees", (QField)"EmployeeID"==(QConst)1001 ),
-	new Dictionary<string,object>() {
-		{"FirstName", "Bruce" },
-		{"LastName", "Wayne" }
-	});
-// insert by model
-dbAdapter.Insert( "Employees", new { FirstName = "John", LastName = "Smith" } );  
-```
-**[RecordSet](https://github.com/nreco/data/wiki/RecordSet)** - efficient replacement for DataTable/DataRow with very similar API:
-```
-var rs = dbAdapter.Select(new Query("Employees")).ToRecordSet();
-rs.SetPrimaryKey("EmployeeID");
-foreach (var row in rs) {
-	Console.WriteLine("ID={0}", row["EmployeeID"]);
-	if ("Canada".Equals(row["Country"]))
-		row.Delete();
-}
-dbAdapter.Update(rs);
-var rsReader = new RecordSetReader(rs); // DbDataReader for in-memory rows
-```
-**[Relex](https://github.com/nreco/data/wiki/Relex)** - compact relational query expressions:
-```
-var relex = @"Employees(BirthDate>""1960-01-01"":datetime)[Name,BirthDate]"
-var relexParser = new NReco.Data.Relex.RelexParser();
-Query q = relexParser.Parse(relex);
-```
 
-## More examples
-* [Command Builder](https://github.com/nreco/data/tree/master/examples/SqliteDemo.CommandBuilder/Program.cs): illustrates SQL commands generation, command batching (inserts)
-* [Data Adapter](https://github.com/nreco/data/tree/master/examples/SqliteDemo.DataAdapter/Program.cs): CRUD operations with dictionaries, POCO, RecordSet
-* [DataSet GenericDataAdapter](https://github.com/nreco/data/blob/master/examples/DataSetGenericDataAdapter/Program.cs): how to implement generic DataSet DataAdapter (Fill/Update) for any ADO.NET provider 
-* [SQL logging](https://github.com/nreco/data/tree/master/examples/SqliteDemo.SqlLogging): how to extend `DbFactory` and add wrapper for `DbCommand` that logs SQL commands produced by `DbDataAdapter`
-* [DB WebApi](https://github.com/nreco/data/tree/master/examples/SqliteDemo.WebApi): configures NReco.Data services in MVC Core app, simple REST API for database tables
-* [MVC Core CRUD](https://github.com/nreco/data/tree/master/examples/SqliteDemo.MVCApplication): full-functional CRUD (list, add/edit forms) that uses NReco.Data as data layer in combination with EF Core
-* [DB Metadata](https://github.com/nreco/data/tree/master/examples/MySqlDemo.DbMetadata): extract database metadata (list of tables, columns) with information_schema queries
-* [GraphQL API for SQL database](https://github.com/nreco/data/tree/master/examples/SqliteDemo.GraphQLApi): provides simple GraphQL API by existing database schema (simple queries only, no mutations yet)
+## Contributing
 
-## Who is using this?
-NReco.Data is in production use at [SeekTable.com](https://www.seektable.com/) and [PivotData microservice](https://www.nrecosite.com/pivotdata_service.aspx).
+Please read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+
+## Authors
+
+* **Javier Cañon** - *Initial work* - [www.JavierCanon.com](https://www.javiercanon.com)
+
+See also the list of [contributors](/AUTHORS.md) who participated in this project.
+
+
+## Supported by, thanks to 
+
+![Softcanon](https://github.com/JavierCanon/Social-Office-Webackeitor/raw/master/docs/images/logo_softcanon_200x75.gif) 
+
+[Softcanon](https://www.softcanon.com) 
+-- 
+
+* [SQL Pretty Printer for SQL Server](http://www.dpriver.com/products/sqlpp/index.php) 
+-- 
 
 ## License
-Copyright 2016-2020 Vitaliy Fedorchenko and contributors
 
-Distributed under the MIT license
+This project is licensed under the GNU GENERAL PUBLIC LICENSE Version 3 - see the [LICENSE.md](/LICENSE.md) file for details.
+
+---
+Made with ❤️ by **[Javier Cañon](https://www.javiercanon.com)**.

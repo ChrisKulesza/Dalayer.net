@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "206431",
+    "ThreadId": "60905",
+    "Html": "<p>I don't mean to sound nieve but in laymans terms can I use this library from a commercial application?</p>\r\n<p>Will this cost me money?</p>\r\n<p>Are there restrictions on this use.</p>\r\n<p>I am sorry I am not a lawer and don;t have access to one, so I just need to know I am not breaking anything</p>\r\n<p>as I appriciate the effort that has gone into this library.</p>\r\n<p>Thanks</p>\r\n<p>MartinTr</p>",
+    "PostedDate": "2009-06-28T19:25:58.917-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "207118",
+    "ThreadId": "60905",
+    "Html": "<p>This wont cost you any money and you wont need to make the source code available to anyone. It means that your work will not become GPL, which means you do not need to make the source code of your work available.</p>\r\n<p>It is best to understand the GPL and LGPL licences by reading the following</p>\r\n<p><a href=\"http://www.gnu.org/licenses/gpl-faq.html\">http://www.gnu.org/licenses/gpl-<strong>faq</strong>.html</a></p>\r\n<p>&nbsp;<a href=\"http://www.fsf.org/licensing/licenses/why-not-lgpl.html\">http://www.fsf.org/licensing/licenses/why-not-lgpl.html</a></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-30T09:29:37.077-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

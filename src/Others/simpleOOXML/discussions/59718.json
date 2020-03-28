@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "202208",
+    "ThreadId": "59718",
+    "Html": "<p><br>Hello,</p>\r\n<p>When I try to build my page I ma getting the following error:</p>\r\n<p>&quot;Could not load file or assembly 'DocumentFormat.OpenXml, Version=2.0.3302.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The system cannot find the file specified. &quot;</p>\r\n<p>I noticed the version of&nbsp; SDK 2.0 that&nbsp;I&nbsp;installed from the link on&nbsp;Simple OOXML&nbsp;homepage is v 2.0.3930.0</p>\r\n<p>How do we get the older version?</p>\r\n<p>Thanks,</p>\r\n<p>Burak</p>",
+    "PostedDate": "2009-06-16T14:24:12.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "202386",
+    "ThreadId": "59718",
+    "Html": "<p>Are you using .Net Framework 3.5 or later?</p>",
+    "PostedDate": "2009-06-17T02:34:59.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "207115",
+    "ThreadId": "59718",
+    "Html": "<p>The latest release of Simple OOXML&nbsp;fixes this problem so that you can work against the April 2009 release of the SDK.</p>",
+    "PostedDate": "2009-06-30T09:20:12.153-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "232131",
+    "ThreadId": "59718",
+    "Html": "<p>I have the same problem but i have the 2.4330.0 version installed and it complains about not having the 2.0.3930.0 version. How can i get it to work?</p>\r\n<p>I guess it should ask for a version range, not a specific build.</p>",
+    "PostedDate": "2009-09-08T03:13:21.99-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "232302",
+    "ThreadId": "59718",
+    "Html": "<p>well, answering to my own question, i &quot;fixed&quot; it by downloading your source code and compiling the library with the sdk build i have installed.</p>",
+    "PostedDate": "2009-09-08T10:38:44.147-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "242714",
+    "ThreadId": "59718",
+    "Html": "<p>The latest build available form the downloads tab uses the August 2009 CTP.</p>",
+    "PostedDate": "2009-10-06T13:52:03.927-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

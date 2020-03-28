@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1348614",
+    "ThreadId": "579359",
+    "Html": "Does Office need to be installed on the box for OOXML to run?<br />\n",
+    "PostedDate": "2015-02-03T06:08:18.31-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1348617",
+    "ThreadId": "579359",
+    "Html": "No, this is the main point of the library and the underlying API from MS.\r<br />\n<br />\nObviously on the client there needs to be a separate viewer or Excel on the client.<br />\n",
+    "PostedDate": "2015-02-03T06:13:50.553-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2015-02-03T07:41:40.67-08:00"
+  }
+]

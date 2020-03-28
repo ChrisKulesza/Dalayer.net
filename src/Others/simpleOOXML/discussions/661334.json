@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1492645",
+    "ThreadId": "661334",
+    "Html": "My question would be: Is Simple OOXML library the library I am looking for ?\r<br />\n<br />\nAt our company we are using the [Telerik RadSpreadProcessing] Library with .NET C#. It can manipulate data on the server-side without the need for Office. Unfortunately the Telerik library is missing few features that we need. Such features are: <br />\n<ul>\n<li>Add Graphic in Header and Footer</li>\n<li>Rotation of Text in a cell</li>\n<li>\nCharts should not be thrown away (Telerik library throws away)<br />\n</li>\n</ul>\nThe library should support the .xlsx format but also Formulas to manipulate the data.\r<br />\n<br />\nFurthermore it would be ideal if the library has the below functionalities:\r<br />\n<br />\n•\tOpenWorkbook\r<br />\n•\tAddNewWorkbook\r<br />\n•\tAddNewSheet\r<br />\n•\tRemoveSheetByName\r<br />\n•\tRemoveSheetByIndex\r<br />\n•\tSelectSheetByName\r<br />\n•\tSelectSheetByIndex\r<br />\n•\tGetSheetNames\r<br />\n•\tSetSheetName\r<br />\n•\tGetCellValue\r<br />\n•\tSetCellValue\r<br />\n•\tSetCellText\r<br />\n•\tSetCellTextFromClipboard\r<br />\n•\tSetRowValues\r<br />\n•\tSetColumnValues\r<br />\n•\tAutoFit\r<br />\n•\tSetHeader\r<br />\n•\tSetFooter\r<br />\n•\tSetCellStyles\r<br />\n•\tSetCellStyle\r<br />\n•\tSetCellBorders\r<br />\n•\tSetCellBorder\r<br />\n•\tSetCellAlignments\r<br />\n•\tSetCellAlignment\r<br />\n•\tSetCellProtections\r<br />\n•\tSetCellProtection\r<br />\n•\tSetSheetProtection\r<br />\n•\tSetCellFormat\r<br />\n•\tSetCellFormats\r<br />\n•\tSave\r<br />\n•\tSaveAs\r<br />\n•\tClose\r<br />\n•\tGetSessions<br />\n",
+    "PostedDate": "2017-02-14T07:10:50.173-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

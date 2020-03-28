@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2009-07-13T00:51:06.743-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "In this case the lexicographic ordering of cells (that is used at WorksheetWriter.cs:466 to find the reference cell) goes like this A1, AA1, AAA1, ... B1, BB1, ...; whereas the column indexes should be compared instead.",
+    "LastUpdatedDate": "2013-05-16T03:43:44.097-07:00",
+    "PlannedForRelease": "Simple OOXML 2.0.3341",
+    "ReleaseVisibleToPublic": true,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "simpleOOXML",
+    "ReportedDate": "2009-06-18T03:31:21.767-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Incorrect cells ordering in WorksheetWriter.FindCell() when adding cells beyond column Z",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 2024
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Many thanks for the patch which has been applied. Spot on with the code fix.",
+      "PostedDate": "2009-07-08T00:53:57.283-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-07-13T00:49:58.243-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-07-13T00:51:06.743-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:11:42.33-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T03:43:44.097-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

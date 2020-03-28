@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "212613",
+    "ThreadId": "62638",
+    "Html": "<p>Hi James,</p>\r\n<p>&nbsp;How to change column width and column color&nbsp; in code?</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2009-07-16T07:26:03.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "212881",
+    "ThreadId": "62638",
+    "Html": "<p>Column width:</p>\r\n<p>&nbsp;</p>\r\n<p>Columns cols = new Columns( new Column() { Min = 7, Max = 7, CustomWidth = true, Width = 20} );</p>\r\n<p>worksheetPart.Worksheet.InsertBefore&lt;Columns&gt;(cols, worksheetPart.Worksheet.GetFirstChild&lt;SheetData&gt;());</p>\r\n<p>&nbsp;</p>\r\n<p>&quot;Min = 7 and Max = 7&quot;&nbsp;is the columns number</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-16T22:52:01.803-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

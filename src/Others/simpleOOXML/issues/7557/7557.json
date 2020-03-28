@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2012-02-03T08:13:53.007-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I am writing a program that generates excel reports, currently using the Microsoft.Interop.Excel reference. My dev computer has Excel on it, but the end user may or may not have Office installed. Will this tool fail if Office isn't installed on the end users computer, or is this interop service separate from the actual application?",
+    "LastUpdatedDate": "2013-09-18T02:16:21.547-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "simpleOOXML",
+    "ReportedDate": "2011-12-20T21:24:26.917-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Creating Excel File Using C# Without Installing Office?",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 7557
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "This doesnt create classic .xls files, but will create .xlsx file as those are pure xml. You do not need Excel on the client or server and this will be far better on a web server than using interop.",
+      "PostedDate": "2012-02-03T08:13:25.893-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-02-03T08:13:53.007-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:11:39.733-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T03:43:41.64-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "[Aspose.Cells for .NET](http://www.aspose.com/.net/excel-component.aspx) is an API that can accomplish your task. I was searching for same tool or API that can help me create excel file even if i dont have office installed and i came across this API. Its not free but offers 30 days trial so you can try this API first and their packages are also reasonable.",
+      "PostedDate": "2013-09-18T02:16:21.547-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

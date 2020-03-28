@@ -1,0 +1,86 @@
+Index: DocumentFormat.OpenXml.Extensions/WorksheetWriter.cs
+===================================================================
+--- DocumentFormat.OpenXml.Extensions/WorksheetWriter.cs	(révision 23845)
++++ DocumentFormat.OpenXml.Extensions/WorksheetWriter.cs	(copie de travail)
+@@ -331,6 +331,28 @@
+         }
+ 
+         ///<summary>
++        ///Delete a row into worksheet and updates all existing cell references.
++        ///</summary> 
++        ///<remarks>
++        ///Formula references are not updated by this method.
++        ///</remarks>
++        public void DeleteRow(uint rowIndex)
++        {
++            DeleteRows(rowIndex, 1, Worksheet);
++        }
++
++        ///<summary>
++        ///Delete one or more rows into worksheet and updates all existing cell references.
++        ///</summary> 
++        ///<remarks>
++        ///Formula references are not updated by this method.
++        ///</remarks>
++        public void DeleteRows(uint rowIndex, uint count)
++        {
++            DeleteRows(rowIndex, count, Worksheet);
++        }
++
++        ///<summary>
+         ///Draws a border around the area defined by the two cell references.
+         ///</summary>
+         public void DrawBorder(string startReference, string endReference, string rgb, BorderStyleValues borderStyle)
+@@ -521,6 +543,52 @@
+             }
+         }
+ 
++        ///<summary>
++        ///Delete a row into worksheet and updates all existing cell references.
++        ///</summary> 
++        ///<remarks>
++        ///Formula references are not updated by this method.
++        ///</remarks>
++        public static void DeleteRow(uint rowIndex, WorksheetPart worksheetPart)
++        {
++            DeleteRows(rowIndex, 1, worksheetPart);
++        }
++
++        ///<summary>
++        ///Delete one or more rows into worksheet and updates all existing cell references. Returns the last row.
++        ///</summary> 
++        ///<remarks>
++        ///Formula references are not updated by this method.
++        ///</remarks>
++        public static void DeleteRows(uint rowIndex, uint count, WorksheetPart worksheetPart)
++        {
++            Worksheet worksheet = worksheetPart.Worksheet;
++            SheetData sheetData = worksheet.GetFirstChild<SheetData>();
++
++            //Remove rows to delete
++            foreach (var row in sheetData.Elements<Row>().
++                Where(r => r.RowIndex.Value >= rowIndex && r.RowIndex.Value < rowIndex + count).ToList())
++            {
++                row.Remove();
++            }
++
++            //Get all the rows which are equal or greater than this row index + row count
++            IEnumerable<Row> rows = sheetData.Elements<Row>().Where(r => r.RowIndex.Value >= rowIndex + count);
++
++            //Move the cell references up by the number of rows
++            foreach (Row row in rows)
++            {
++                row.RowIndex.Value -= count;
++
++                IEnumerable<Cell> cells = row.Elements<Cell>();
++                foreach (Cell cell in cells)
++                {
++                    cell.CellReference = SpreadsheetReader.ColumnFromReference(cell.CellReference)
++                        + row.RowIndex.Value.ToString();
++                }
++            }
++        }
++
+         /// <summary>
+         /// Inserts a datatable into a worksheet at the location specified and returns the rowindex of the last row.
+         /// </summary>

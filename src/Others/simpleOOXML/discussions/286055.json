@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "724732",
+    "ThreadId": "286055",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I'm new to this great library but I have some questions about some Worksheet commands.</p>\r\n<ol>\r\n<li>How can I make&nbsp;<strong>JUST bottom</strong> border colored of&nbsp;Navy with width of 0,5 ?\r\n</li><li>How to set column width to automatic or how to calculate the largest data of column 3 ?\r\n</li><li>Is there any way to paste a row of data by once&nbsp;&nbsp;? </li><li>Is there a way to set a style to a AREA ? (eg <br>\r\nafter writer.PasteDataTable(dtDados,&quot;B3&quot;); <br>\r\nI know how many rows I have with dtDados.Rows.Count and how many columns ... so... how to apply a style to this area ?\r\n</li><li>Can I apply format to a column ? (eg date format to Brasilian format dd/MM/yy ?)\r\n</li><li>Apply a style do make a background color like a zebra, even rows silver others lightgray ?\r\n</li></ol>\r\n<p>&nbsp;</p>\r\n<p>Thanks in advanced.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:x-small\">&nbsp;</span></p>\r\n",
+    "PostedDate": "2012-01-13T05:37:15.44-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

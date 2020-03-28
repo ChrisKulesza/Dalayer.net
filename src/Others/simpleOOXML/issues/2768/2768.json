@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2009-10-05T01:14:06.733-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Occasionally when I try to stream the excel file to the client browser via a memory stream I get the following error when selecting [Open] file from the prompt.\n \nWindows cannot find .....\\Content.IE5\\XRCR3ZQ8\\performanceCA9103IG.xlsx  Make sure that you typed the name correctly and then try again.\n \nThe second time I try to upload it works fine.  Is the file copied to the temp folder?\n \n-c",
+    "LastUpdatedDate": "2013-05-16T03:43:43.217-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "simpleOOXML",
+    "ReportedDate": "2009-09-21T22:44:46.923-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Windows cannot find .....\\Content.IE5\\XRCR3ZQ8\\performanceCA9103IG.xlsx",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 2768
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "The library itself does not perform any streaming to a browser, but the examples project does have some code which shows how to directly send a document from a stream to the browser without first saving to a folder. \r\n\r\nIt looks like the code you are using saves the file to disk first, and possibly the server hasnt finished saving the file before it tries to send it to the client.",
+      "PostedDate": "2009-10-05T01:13:25.66-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-10-05T01:13:56.667-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-10-05T01:14:06.733-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:11:41.167-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T03:43:43.217-07:00",
+      "Id": -2147483648
+    }
+  ]
+}
